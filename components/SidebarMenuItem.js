@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function SidebarMenuItem({ text, Icon, active }) {
+export default function SidebarMenuItem({title,Icon}) {
   return (
-    <div className='h-7'>
-    <Icon/>
+    <div className='h-2'>
+      <Icon/>
     </div>
   )
 }

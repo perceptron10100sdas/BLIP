@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import SidebarMenuItem from './SidebarMenuItem'
 import {HomeIcon} from "@heroicons/react/24/solid"
+import {HashtagIcon} from "@heroicons/react/24/outline"
 
 
 export default function Sidebar() {
@@ -14,9 +15,11 @@ export default function Sidebar() {
          width="50"
          height="50"
         src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202307/x_twitter-sixteen_nine.jpg"/>
+
+    
     </div>
-    <div className='mt-4 mb-2.5 xl:items-start'>
-    <SidebarMenuItem text="Home" Icon={HomeIcon}  />
+    <div>
+      <SidebarMenuItem title="Home" Icon={HomeIcon}/>
     </div>
     
 
