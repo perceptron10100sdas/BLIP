@@ -20,6 +20,7 @@ export default function CommentModal() {
   const [postId] = useRecoilState(postIdState);
   const [post, setPost] = useState({});
   const [input, setInput] = useState("");
+  const [currentUser] = useRecoilState(userState);
  
   const router = useRouter();
   useEffect(() => {
