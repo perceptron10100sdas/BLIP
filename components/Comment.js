@@ -131,7 +131,7 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
                 className="h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100"
               />
             </div>
-            {currentUser?.user.uid === comment?.userId && (
+            {currentUser?.uid === comment?.userId && (
               <TrashIcon
                 onClick={deleteComment}
                 className="h-9 w-9 hoverEffect p-2 hover:text-red-600 hover:bg-red-100"
