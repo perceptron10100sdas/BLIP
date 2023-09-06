@@ -13,7 +13,7 @@ import {
   InboxIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Sidebar() {
