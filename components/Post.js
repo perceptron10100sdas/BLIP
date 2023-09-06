@@ -43,9 +43,9 @@ const unsubscribe=onSnapshot(
   {
     if (currentUser) {
       if (hasLiked) {
-        await deleteDoc(doc(db, "posts", id, "likes", currentUser?.user.uid));
+        await deleteDoc(doc(db, "posts", id, "likes", currentUser?.uid));
       } else {
-        await setDoc(doc(db, "posts", id, "likes", currentUser?.user.uid), {
+        await setDoc(doc(db, "posts", id, "likes", currentUser?.uid), {
           username: currentUser?.username,
         });
       }
