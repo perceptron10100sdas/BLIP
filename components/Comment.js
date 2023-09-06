@@ -1,4 +1,4 @@
-import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartIcon,ShareIcon,ChartBarSquareIcon} from "@heroicons/solid/24/outline"
+import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartIcon,ShareIcon,ChartBarSquareIcon} from "@heroicons/react/24/solid"
   import { HeartIcon as HeartIconFilled } from "@heroicons/react/24/solid";
   import Moment from "react-moment";
   import {
