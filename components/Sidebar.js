@@ -104,7 +104,7 @@ export default function Sidebar() {
         onClick={() => router.push("/auth/signin")}
           className="bg-black text-white hover:bg-white hover:text-black  rounded-full w-36 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline"
         >
-          Sign in
+          Join Now
         </button>
 
       )}

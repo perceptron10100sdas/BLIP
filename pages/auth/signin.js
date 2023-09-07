@@ -48,7 +48,7 @@ export default function Signin() {
             onClick={onGoogleClick}
             className="bg-red-400 rounded-lg p-3 text-white hover:bg-red-500"
           >
-            Sign in with Google
+            Join with Google
           </button>
         </div>
       </div>
