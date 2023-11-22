@@ -5,10 +5,13 @@ import Post from './Post';
 import { useEffect } from 'react';
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db } from '../firebase';
+import { useRouter } from 'next/router';
+
 
 import Widgets from './Widgets';
 
 export default function Feed() {
+  const router=useRouter()
   const [posts,setPosts]=useState([])
   useEffect(
     () =>
@@ -29,6 +32,8 @@ export default function Feed() {
       <div className="hoverEffect flex items-center justify-center px-0 ml-auto w-9 h-9">
 
           <SparklesIcon className="h-5"
+           onClick={() => router.push("/auth/signin")}
+           
            />
           
         </div>
