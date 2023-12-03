@@ -40,18 +40,18 @@ export default function PostPage({ newsResults, randomUsersResults }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-screen mx-auto bg-gradient-to-r from-white to-black ">
+      <main className="flex min-h-screen mx-auto bg-gradient-to-r from-blue-950 to-black ">
         {/* Sidebar */}
         <Sidebar />
 
         {/* Feed */}
 
         <div className="xl:ml-[370px] border-l border-r border-gray-200  xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl ">
-          <div className="flex items-center space-x-2  py-2 px-3 sticky top-0 z-50 bg-gradient-to-r from-white to-black border-b border-gray-200">
+          <div className="flex items-center space-x-2  py-2 px-3 sticky top-0 z-50 bg-black border-b border-gray-200">
             <div className="hoverEffect" onClick={() => router.push("/")}>
               <ArrowLongLeftIcon className="h-5 " />
             </div>
-            <h2 className="text-lg sm:text-xl font-bold cursor-pointer">
+            <h2 className="text-lg sm:text-xl text-white font-bold cursor-pointer">
               Tweet
             </h2>
           </div>

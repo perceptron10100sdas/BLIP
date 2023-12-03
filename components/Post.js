@@ -64,7 +64,7 @@ const unsubscribe=onSnapshot(
   }
   
   return (
-    <div className="flex p-3 cursor-pointer border-b border-gray-200">
+    <div className="flex p-3 cursor-pointer shadow-md shadow-sky-500 hover:scale-110">
       {/* user image */}
       <img
         className="h-11 w-11 rounded-full mr-4"
@@ -75,14 +75,14 @@ const unsubscribe=onSnapshot(
       <div className="">
         {/* Header */}
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between ">
           {/* post user info */}
-          <div className="flex items-center space-x-1 whitespace-nowrap">
-            <h4 className="font-bold text-[15px] sm:text-[16px] hover:underline">
+          <div className="flex items-center space-x-1 whitespace-nowrap shadow-md shadow-white">
+            <h4 className="font-bold text-[15px] sm:text-[16px] hover:underline text-transparent bg-gradient-to-tr from-white to-slate-500 bg-clip-text font-sans shadow-white">
               {post?.data()?.name}
             </h4>
-            <span className="text-sm sm:text-[15px]">@{post?.data()?.username} - </span>
-            <span className="text-sm sm:text-[15px] text-white hover:underline">
+            <span className="text-sm sm:text-[15px] text-transparent bg-gradient-to-r from-yellow-500 to-white bg-clip-text">@{post?.data()?.username} - </span>
+            <span className="text-sm sm:text-[15px]  text-orange-400 hover:underline">
               <Moment fromNow>{post?.timestamp?.toDate()}</Moment>
             </span>
           </div>
@@ -95,7 +95,7 @@ const unsubscribe=onSnapshot(
 
         <p
           onClick={() => router.push(`/posts/${id}`)}
-          className="text-gray-800 text-[15px sm:text-[16px] mb-2"
+          className="text-white text-[15px sm:text-[16px] mb-2  text-white overline"
         >
           {post?.data()?.text}
         </p>
@@ -106,12 +106,13 @@ const unsubscribe=onSnapshot(
           onClick={() => router.push(`/posts/${id}`)}
           className="rounded-2xl mr-2"
           src={post?.data()?.image}
+          width="300px"
           alt=""
         />
 
         {/* icons */}
 
-        <div className="flex justify-between text-gray-500 p-2">
+        <div className=" flex justify-evenly bg-black shadow-md shadow-sky-500 text-gray-500 p-2">
         <div className="flex items-center select-none">
             <ChatBubbleBottomCenterIcon
               onClick={() => {
@@ -160,6 +161,7 @@ const unsubscribe=onSnapshot(
           <ChartBarSquareIcon className="h-9 w-9 text-white hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100" />
         </div>
       </div>
+      
     </div>
   );
 }
