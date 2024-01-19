@@ -48,7 +48,7 @@ export default function Sidebar() {
   }
   return (
     <div className="hidden sm:flex flex-col p-2 xl:items-start fixed h-full xl:ml-24">
-    {/*x logo */}
+    
 
     <div className="">
 

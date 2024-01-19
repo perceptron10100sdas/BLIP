@@ -81,7 +81,7 @@ const unsubscribe=onSnapshot(
             <h4 className="font-bold text-[15px] sm:text-[16px] hover:underline text-transparent bg-gradient-to-tr from-white to-slate-500 bg-clip-text font-sans shadow-white">
               {post?.data()?.name}
             </h4>
-            <span className="text-sm sm:text-[15px] text-transparent bg-gradient-to-r from-yellow-500 to-white bg-clip-text">@{post?.data()?.username} - </span>
+            <span className="text-sm sm:text-[15px] text-transparent bg-gradient-to-r from-yellow-500 to-white bg-clip-text">-{post?.data()?.username}@blip - </span>
             <span className="text-sm sm:text-[15px]  text-orange-400 hover:underline">
               <Moment fromNow>{post?.timestamp?.toDate()}</Moment>
             </span>
@@ -112,7 +112,7 @@ const unsubscribe=onSnapshot(
 
         {/* icons */}
 
-        <div className=" flex justify-evenly bg-black shadow-md shadow-sky-500 text-gray-500 p-2">
+        <div className=" flex justify-evenly bg-black bg-clip-padding shadow-md shadow-sky-500 text-gray-500 p-2">
         <div className="flex items-center select-none">
             <ChatBubbleBottomCenterIcon
               onClick={() => {
@@ -156,9 +156,9 @@ const unsubscribe=onSnapshot(
               </span>
             )}
           </div>
-
           <ShareIcon className="h-9 w-9  text-white hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100" />
           <ChartBarSquareIcon className="h-9 w-9 text-white hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100" />
+      
         </div>
       </div>
       
