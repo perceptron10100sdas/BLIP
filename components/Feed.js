@@ -86,7 +86,7 @@ export default function Feed() {
   ) : (
     <button
     onClick={() => router.push("/auth/signin")}
-      className="bg-black text-white hover:bg-white hover:text-black  rounded-full w-36 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline"
+      className="bg-black text-white  rounded-full w-50 h-50 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline"
     >
       Join Now
     </button>

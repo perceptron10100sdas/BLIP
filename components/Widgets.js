@@ -5,10 +5,14 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import News from './News'
 import TradingViewWidget from './Tradingview';
 import SpotifyPlaylist from './Spotify';
+import { getAuth } from 'firebase/auth';
+import { listAll } from 'firebase/storage';
+
 
 export default function Widgets({newsResults,randomUsersResults}) {
   const [articleNum, setArticleNum] = useState(3);
   const [randomUserNum, setRandomUserNum] = useState(3);
+ 
   return (
     <div className="xl:w-[600px] hidden lg:inline ml-8 space-y-5">
       
@@ -64,7 +68,27 @@ export default function Widgets({newsResults,randomUsersResults}) {
         >
           Show more
         </button>
+
         </div>
+       
 </div>
   )
 }
+export const listAllUsers = (nextPageToken) => {
+  // List batch of users, 1000 at a time.
+  getAuth()
+    .listAll(1000, nextPageToken)
+    .then((listUsersResult) => {
+      listUsersResult.users.forEach((userRecord) => {
+        console.log('user', userRecord.toJSON());
+      });
+      if (listUsersResult.pageToken) {
+        // List next batch of users.
+        listAllUsers(listUsersResult.pageToken);
+      }
+    })
+    .catch((error) => {
+      console.log('Error listing users:', error);
+    });
+};
+// Start listing users from the beginning, 1000 at a time. 
