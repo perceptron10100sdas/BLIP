@@ -61,44 +61,44 @@ export default function Feed() {
       <p className='text-white '>Welcome {currentUser?.name} to</p><h1 className="text-lg sm:text-xl font-semibold cursor-pointer text-white text-center">Blip</h1></div>
       <div className="hoverEffect flex items-center justify-center px-0 ml-auto w-9 h-9">
 
-      {currentUser ? (
-    <>
-      
+{currentUser ? (
+<>
 
-      {/* Mini-Profile */}
 
-      <div className="mt-3 text-gray-700  xl:justify-start ">
-     
-        <img
-            onClick={onSignOut}
-            src={currentUser?.userImg}
-          alt="user-img"
-          className="h-50 w-50 rounded-full xl:mr-2 ring-2 ring-green-500"
-        />
-        <div className="leading-5 hidden xl:inline ">
-         
-        </div>
-        
-      </div>
-      
-    </>
+{/* Mini-Profile */}
 
-  ) : (
-    <button
-    onClick={() => router.push("/auth/signin")}
-      className="bg-black text-white  rounded-full w-50 h-50 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline"
-    >
-      Join Now
-    </button>
 
-  )}</div>
-        
-      </div>
+  
+<div className="mt-3 text-gray-700  xl:justify-start ">
+
+<img
+   onClick={onSignOut}
+   src={currentUser?.userImg}
+ alt="user-img"
+ className="h-50 w-50 rounded-full xl:mr-2 ring-2 ring-green-500"
+/>
+<div className="leading-5 hidden xl:inline ">
+
+</div>
+
+</div>
+
+</>
+
+) : (
+<button
+onClick={() => router.push("/auth/signin")}
+className="bg-black text-white  rounded-full w-50 h-50 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline"
+>
+Join Now
+</button>
+
+)}</div></div>
       <Input/>
       {posts.map((post) => (
         <Post key={post.id} id={post.id} post={post} />
       ))}
-    
+   
     </div>
   )
 }

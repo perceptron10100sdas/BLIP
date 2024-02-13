@@ -78,7 +78,7 @@ export default function Input() {
         <div className="w-full divide-y divide-gray-200">
           <div className="">
           <textarea
-                className="w-full border-none focus:ring-0 text-lg placeholder-gray-700 tracking-wide min-h-[50px] text-white bg-inherit"
+                className="w-full border-none focus:ring-0 text-lg placeholder-purple-400 placeholder-font-thin tracking-wide min-h-[50px] text-white bg-inherit"
                 rows="2"
                 placeholder="What's happening?"
                 value={input}
@@ -105,7 +105,7 @@ export default function Input() {
                       className=""
                       onClick={() => filePickerRef.current.click()}
                     >
-                      <PhotoIcon className="h-10 w-10 hoverEffect p-2 text-black hover:bg-sky-100" />
+                      <PhotoIcon className="h-10 w-10 hoverEffect p-2 text-white hover:bg-purple-100" />
                       <input
                         type="file"
                         hidden
@@ -113,7 +113,7 @@ export default function Input() {
                         onChange={addImageToPost}
                       />
                     </div>
-                    <FaceSmileIcon className="h-10 w-10 hoverEffect p-2 text-black hover:bg-sky-100" />
+                  
                   </div>
                   <button
                     onClick={sendPost}

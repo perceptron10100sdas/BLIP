@@ -9,6 +9,7 @@ import { getAuth } from 'firebase/auth';
 import { listAll } from 'firebase/storage';
 
 
+
 export default function Widgets({newsResults,randomUsersResults}) {
   const [articleNum, setArticleNum] = useState(3);
   const [randomUserNum, setRandomUserNum] = useState(3);
@@ -33,6 +34,7 @@ export default function Widgets({newsResults,randomUsersResults}) {
           Show more
         </button>
       </div>
+     
       <h2 className='text-green-500 overline'>Trending on Spotify</h2>
       <SpotifyPlaylist/>
       <div className="sticky top-16 text-gray-700 space-y-3 bg-gray-100 pt-2 rounded-xl w-[90%] xl:w-[75%]">

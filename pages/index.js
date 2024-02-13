@@ -18,12 +18,12 @@ export default function Home({newsResults,randomUsersResults}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen min-w-screen bg-black">
-        <Sidebar/>
+        
         <Feed/>
         <Widgets newsResults={newsResults.articles} 
          randomUsersResults={randomUsersResults.results}
-        />
-        
+        /><Sidebar/>
+         
 <CommentModal />
 
       </main>

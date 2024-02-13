@@ -22,6 +22,7 @@ import { useRecoilState } from "recoil";
 import { userState } from "../atom/userAtom";
 import { useRouter } from "next/router";
 
+
 export default function Sidebar() {
   const router = useRouter();
   const [currentUser, setCurrentUser] = useRecoilState(userState);
@@ -47,48 +48,42 @@ export default function Sidebar() {
     setCurrentUser(null);
   }
   return (
-    <div className="hidden sm:flex flex-col p-2 xl:items-start fixed h-full xl:ml-24">
+    <div className="hidden sm:flex flex-col p-3 mt-3 mb-3 items-center fixed h-full xl:ml-24 bg-purple-500 rounded-md">
     
 
-    <div className="">
+    <div className=" ">
 
-  <div className='flex'><h1 className='text-5xl font-bold text-white'>B</h1><p className='text-sky-500 mt-5'>reezy</p></div>
-  <div className='flex'><h1 className='text-5xl font-bold text-white'>L</h1><p className='text-sky-500 mt-5'>ight</p></div>
-  <div className='flex'><h1 className='text-5xl font-bold text-white'>I</h1><p className='text-sky-500 mt-5'>nstant</p></div>
-  <div className='flex'><h1 className='text-5xl font-bold text-white'>P</h1><p className='text-sky-500 mt-5'>osting</p></div>
+  <h1 className='text-5xl font-light text-center overline '>BLIP</h1>
 
 
 </div>
-
-  
-
-  {currentUser ? (
+{currentUser ? (
     <>
       
 
       {/* Mini-Profile */}
 
-      <div className="mt-3 text-gray-700  xl:justify-start ">
+      <div className="mt-10 text-gray-700 space-y-7 items-center">
         <img
             onClick={onSignOut}
             src={currentUser?.userImg}
           alt="user-img"
-          className="h-150 w-150 rounded-full xl:mr-2 ring-4"
+          className="h-150 w-150 rounded-full xl:mr-2 ring-4 ring-black shadow-xl shadow-black mx-12 "
         />
-        <div className="leading-5 hidden xl:inline ">
-          <h4 className="font-bold text-3xl text-white">{currentUser?.name}</h4>
-          <p className=" text-sky-500">@{currentUser?.username}</p>
+        <div className="space-y-7 mt-4">
+          <h4 className=" text-4xl text-black font-thin ">{currentUser?.name}</h4>
+          <p className=" text-white text-3xl font-thin">@{currentUser?.username}</p>
         </div>
         
       </div>
-      <button className="bg-black text-white hover:bg-white hover:text-black rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline mt-3">
+      <button className="bg-black text-white hover:bg-white hover:text-black rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline mt-7">
       Express
       </button>
     </>
   ) : (
     <button
     onClick={() => router.push("/auth/signin")}
-      className="bg-black text-white hover:bg-white hover:text-black  rounded-full w-36 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline"
+      className="bg-black text-white hover:bg-white hover:text-black  rounded-full w-36 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline mt-5"
     >
       Join Now
     </button>
