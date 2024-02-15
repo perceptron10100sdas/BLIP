@@ -7,6 +7,8 @@ import TradingViewWidget from './Tradingview';
 import SpotifyPlaylist from './Spotify';
 import { getAuth } from 'firebase/auth';
 import { listAll } from 'firebase/storage';
+import { FaHome } from "react-icons/fa";
+
 
 
 
@@ -24,6 +26,7 @@ export default function Widgets({newsResults,randomUsersResults}) {
         </div>
        
     </div>
+    <FaHome className='text-white text-4xl rounded-full  p-1 ring-4 ring-purple-600 shadow-white shadow-lg'/>
     <div className="text-white space-y-3 bg-inherit rounded-xl pt-2 w-[90%] xl:w-[75%]">
         <h4 className="font-bold text-white text-xl px-4 overline">Whats happening</h4>
         <TradingViewWidget/>

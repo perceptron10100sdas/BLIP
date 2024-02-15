@@ -48,7 +48,7 @@ export default function Sidebar() {
     setCurrentUser(null);
   }
   return (
-    <div className="hidden sm:flex flex-col p-3 mt-3 mb-3 items-center fixed h-full xl:ml-24 bg-purple-500 rounded-md">
+    <div className="hidden sm:flex flex-col p-3 mt-3 mb-3 items-center fixed h-full xl:ml-24 bg-purple-500 rounded-md ring-1 ring-black shadow-lg shadow-black">
     
 
     <div className=" ">
@@ -68,7 +68,7 @@ export default function Sidebar() {
             onClick={onSignOut}
             src={currentUser?.userImg}
           alt="user-img"
-          className="h-150 w-150 rounded-full xl:mr-2 ring-4 ring-black shadow-xl shadow-black mx-12 "
+          className="h-150 w-150 rounded-full xl:mr-2 ring-4 ring-black shadow-lg shadow-black mx-12 mt-12"
         />
         <div className="space-y-7 mt-4">
           <h4 className=" text-4xl text-black font-thin ">{currentUser?.name}</h4>
