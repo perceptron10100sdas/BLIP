@@ -57,7 +57,7 @@ export default function Feed() {
  
   return (
     <div className="xl:ml-[500px]  xl:min-w-[550px] sm:ml-[72px] p-3 bg-inherit flex-grow max-w-xl">
-    <div className="flex justify-evenly py-2 px-3 sticky top-0 z-50 bg-black border-b border-gray-200 ">
+    <div className="flex justify-evenly py-2 px-3 sticky top-0 z-50 bg-black rounded-md ring-1 ring-blue-950 p-3 ">
       <div className='flex justify-around space-x-10'>
       <Example/></div>
       <div className="hoverEffect flex items-center justify-center px-0 ml-auto w-9 h-9">
@@ -72,7 +72,7 @@ export default function Feed() {
 
 <button
 onClick={() => router.push("/explore/smallscreen")}
-className="bg-black text-white  font-bold shadow-md hover:brightness-95 md:hidden"
+className="bg-black text-indigo-500  font-thin shadow-md hover:brightness-95 md:hidden"
 >
 Let's Blip
 </button></div></div>
