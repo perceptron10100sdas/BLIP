@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar'
 import Feed from '../components/Feed';
 
 import 'tailwindcss/tailwind.css';
-import Widgets from '../components/Widgets';
+
 import CommentModal from '../components/CommentModal';
 import { getAuth } from "firebase/auth";
 import { listAll } from "firebase/storage";

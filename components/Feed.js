@@ -14,7 +14,7 @@ import { doc, getDoc } from "firebase/firestore";
 
 
 
-import Widgets from './Widgets';
+
 import Example from './bubbletext';
 
 export default function Feed() {
