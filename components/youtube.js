@@ -1,14 +1,10 @@
+"use client"
 import React from 'react';
 
 const SpotifyPlaylist = () => {
-  const iframeStyle = {
-    borderRadius: '12px',
-  };
-
   return (
     <iframe
-    className='rounded-md shadow-lg shadow-green-500'
-      style={iframeStyle}
+      style={{ borderRadius: '12px' }}
       src="https://open.spotify.com/embed/playlist/5ABHKGoOzxkaa28ttQV9sE?utm_source=generator&theme=0"
       width="100%"
       height="352"
@@ -21,4 +17,3 @@ const SpotifyPlaylist = () => {
 };
 
 export default SpotifyPlaylist;
-

@@ -9,7 +9,7 @@ import CommentModal from '../components/CommentModal';
 import { getAuth } from "firebase/auth";
 import { listAll } from "firebase/storage";
 
-export default function Home({newsResults,randomUsersResults}) {
+export default function Home() {
   return (
     <div >
       <Head>
@@ -20,9 +20,7 @@ export default function Home({newsResults,randomUsersResults}) {
       <main className="flex min-h-screen min-w-screen bg-black">
         
         <Feed/>
-        <Widgets newsResults={newsResults.articles} 
-         randomUsersResults={randomUsersResults.results}
-        /><Sidebar/>
+        <Sidebar/>
          
 <CommentModal />
 
