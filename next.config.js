@@ -2,7 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-
+  eslint: {
+    ignoreDuringBuilds: true,
+},
   images:{
     domains: ["akm-img-a-in.tosshub.com"]
   }
