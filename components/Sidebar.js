@@ -50,7 +50,7 @@ export default function Sidebar() {
   
 
   return (
-    <div className="hidden sm:flex flex-col p-3 mt-3 mb-3 items-center fixed h-full xl:ml-24 bg-purple-500 rounded-md ring-1 ring-black shadow-lg shadow-black">
+    <div className=" hidden xl:flex  flex-col p-3 mt-3 mb-3 items-center fixed h-full xl:ml-24 bg-purple-500 rounded-md ring-1 ring-black shadow-lg shadow-black">
     
 
     <div className=" ">

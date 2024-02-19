@@ -56,7 +56,7 @@ export default function Feed() {
   
  
   return (
-    <div className="xl:ml-[500px]  xl:min-w-[576px] sm:ml-[72px] p-3 bg-inherit flex-grow max-w-xl">
+    <div className="xl:ml-[500px]  xl:min-w-[550px] sm:ml-[72px] p-3 bg-inherit flex-grow max-w-xl">
     <div className="flex justify-evenly py-2 px-3 sticky top-0 z-50 bg-black border-b border-gray-200 ">
       <div className='flex justify-around space-x-10'>
       <Example/></div>

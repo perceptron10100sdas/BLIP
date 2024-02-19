@@ -12,6 +12,7 @@ import {
 
 import { addDoc, collection, serverTimestamp,updateDoc,doc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
+import motion from "framer-motion"
 
 export default function Input() {
   
@@ -68,7 +69,7 @@ export default function Input() {
   return (
 <>
     {currentUser && (
-      <div className="flex  border-b border-gray-200 p-3 space-x-3">
+      <div className="flex rounded-md p-4 mt-3 space-x-3 ring-2 ring-white shadow-md shadow-white">
         <img
          onClick={onSignOut}
          src={currentUser?.userImg}
@@ -78,7 +79,7 @@ export default function Input() {
         <div className="w-full divide-y divide-gray-200">
           <div className="">
           <textarea
-                className="w-full border-none focus:ring-0 text-lg placeholder-purple-400 placeholder-font-thin tracking-wide min-h-[50px] text-white bg-inherit"
+                className="w-full border-none focus:ring-0 text-lg placeholder-pink-400 placeholder-font-thin tracking-wide min-h-[50px] text-white bg-inherit"
                 rows="2"
                 placeholder="What's happening?"
                 value={input}
@@ -105,7 +106,7 @@ export default function Input() {
                       className=""
                       onClick={() => filePickerRef.current.click()}
                     >
-                      <PhotoIcon className="h-10 w-10 hoverEffect p-2 text-white hover:bg-purple-100" />
+                      <PhotoIcon className="h-10 w-10 hoverEffect p-2 text-pink-500 rounded-full bg-white ring-2 shadow-sm shadow-white hover:bg-purple-100" />
                       <input
                         type="file"
                         hidden
