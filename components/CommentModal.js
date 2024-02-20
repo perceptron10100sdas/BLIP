@@ -50,7 +50,7 @@ export default function CommentModal() {
         <Modal
           isOpen={open}
           onRequestClose={() => setOpen(false)}
-          className="max-w-lg w-[90%]  absolute top-24 left-[50%] translate-x-[-50%] bg-white border-2 border-gray-200 rounded-xl shadow-md"
+          className="max-w-lg w-[90%]  absolute top-24 left-[50%] translate-x-[-50%] bg-white  rounded-xl shadow-md"
         >
           <div className="p-1">
             <div className="border-b border-gray-200 py-2 px-1.5">

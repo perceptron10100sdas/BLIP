@@ -71,22 +71,14 @@ export default function PostPage({ newsResults, randomUsersResults }) {
           )}
         </div>
 
-        {/* Widgets */}
-
-        <Widgets
-          newsResults={newsResults.articles}
-          randomUsersResults={randomUsersResults.results}
-        />
-
-        {/* Modal */}
-
+        
         <CommentModal />
       </main>
     </div>
   );
 }
 
-// https://saurav.tech/NewsAPI/top-headlines/category/business/us.json
+
 
 export async function getServerSideProps() {
   const newsResults = await fetch(

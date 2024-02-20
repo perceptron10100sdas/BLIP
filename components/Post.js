@@ -131,12 +131,12 @@ const unsubscribe=onSnapshot(
             {hasLiked ? (
               <HeartIconFilled
                 onClick={likePost}
-                className="h-9 w-9 hoverEffect p-2 text-red-600 hover:bg-red-100 relative z-10"
+                className="h-9 w-9  p-2 text-red-600 hover:bg-red-100 relative z-10 group-hover:text-red-500"
               />
             ) : (
               <HeartIcon
                 onClick={likePost}
-                className="h-9 w-9 hoverEffect p-2 hover:text-red-600 hover:bg-red-100 text-black group-hover:text-white"
+                className="h-9 w-9  p-2    group-hover:bg-transparent  group-hover:text-white relative z-10  "
               />
             )}
             {likes.length > 0 && (

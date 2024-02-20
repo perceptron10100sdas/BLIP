@@ -6,8 +6,8 @@ import News from '../../components/news1'
 
 export default function explore() {
   return (
-    <div className='grid justify-center bg-black p-4 space-y-7'>
-       <h1 className='text-green-500 overline font-thin text-3xl'>Top stocks</h1>
+    <div className='grid justify-center bg-black p-4 space-y-7 max-w-screen'>
+       <h1 className=' text-green-500 overline font-thin text-3xl'>Top stocks</h1>
         <Tradingview/>
         <h1 className='text-green-500 overline font-thin text-3xl'>Trending on spotify</h1>
         <SpotifyPlaylist/>

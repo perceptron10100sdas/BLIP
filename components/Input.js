@@ -13,6 +13,7 @@ import {
 import { addDoc, collection, serverTimestamp,updateDoc,doc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import motion from "framer-motion"
+import Example from './bubbletext';
 
 export default function Input() {
   
@@ -121,7 +122,7 @@ export default function Input() {
                     disabled={!input.trim()}
                     className="bg-black text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
                   >
-                    Express
+                    <Example/>
                   </button>
                 </>
               )}

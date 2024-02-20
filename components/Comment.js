@@ -79,7 +79,7 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
     }
   
     return (
-      <div className="flex p-3 cursor-pointer border-b border-gray-200 pl-20">
+      <div className="flex  rounded-md ring-2 ring-purple-400 mt-3 p-3">
         {/* user image */}
         <img
           className="h-11 w-11 rounded-full mr-4"
@@ -90,14 +90,14 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
         <div className="flex-1">
           {/* Header */}
   
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between ">
             {/* post user info */}
-            <div className="flex items-center space-x-1 whitespace-nowrap">
-              <h4 className="font-bold text-[15px] sm:text-[16px] hover:underline">
+            <div className="flex items-center space-x-1 whitespace-nowrap ">
+              <h4 className="font-thin text-[15px] sm:text-[16px] text-white hover:underline">
                 {comment?.name}
               </h4>
-              <span className="text-sm sm:text-[15px]">
-                @{comment?.username} -{" "}
+              <span className="text-sm sm:text-[15px]  text-white">
+                @{comment?.username} commented-
               </span>
               <span className="text-sm sm:text-[15px] hover:underline">
                 <Moment fromNow>{comment?.timestamp?.toDate()}</Moment>
@@ -110,8 +110,8 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
   
           {/* post text */}
   
-          <p className="text-gray-800 text-[15px sm:text-[16px] mb-2">
-            {comment?.comment}
+          <p className="text-gray-800 text-[15px sm:text-[16px] mb-2  text-white">
+           "{comment?.comment}" 
           </p>
   
           {/* icons */}
@@ -159,8 +159,7 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
               )}
             </div>
   
-            <ShareIcon className="h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100" />
-            <ChartBarSquareIcon className="h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100" />
+         
           </div>
         </div>
       </div>
