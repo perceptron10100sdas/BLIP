@@ -21,30 +21,26 @@ export default function Signin() {
     }
   };
   return (
-    <div className="flex justify-center mt-20 space-x-4">
-      <img
-        src="https://cdn.cms-twdigitalassets.com/content/dam/help-twitter/en/twitter-tips/desktop-assets/ch-01/ch12findphone.png.twimg.1920.png"
-        alt="twitter image inside a phone"
-        className="hidden object-cover md:w-44 md:h-80 rotate-6  md:inline-flex"
-      />
+    <div className="bg-[url('/blip.jpg')] bg-cover
+    bg-center  min-h-screen -z-20">
+    <div className="flex justify-center  space-x-4 ">
+      
       <div className="">
         <div className="flex flex-col items-center">
-          <img
-            className="w-36 object-cover"
-            src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"
-            alt="twitter logo"
-          />
+          <h1 className="text-7xl text-pink-500 font-thin italic overline mt-20 brightness-150 contrast-150 ">Blip</h1>
           <p className="text-center text-sm italic my-10">
             This app is created for learning purposes
           </p>
           <button
             onClick={onGoogleClick}
-            className="bg-red-400 rounded-lg p-3 text-white hover:bg-red-500"
+            className="bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg p-3 text-white hover:bg-red-500 mt-16 font-semibold italic"
           >
             Join with Google
           </button>
+          <p className="mt-40 font-thin text-sky-500 text-2xl italic">perceptron10100sdas</p>
         </div>
       </div>
-    </div>
+
+    </div>      </div>
   );
 }
