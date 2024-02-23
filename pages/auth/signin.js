@@ -12,6 +12,15 @@ export default function Signin() {
       const user = auth.currentUser.providerData[0];
       const docRef = doc(db, "users", user.uid);
       const docSnap = await getDoc(docRef);
+if (!docSnap.exists()) {
+        await setDoc(docRef, {
+          name: user.displayName,
+          email: user.email,
+          username: user.displayName.split(" ").join("").toLocaleLowerCase(),
+          userImg: user.photoURL,
+          uid: user.uid,
+          timestamp: serverTimestamp(),
+        });
       
       
       
