@@ -20,7 +20,8 @@ if (!docSnap.exists()) {
           userImg: user.photoURL,
           uid: user.uid,
           timestamp: serverTimestamp(),
-        })
+        });
+      }
       
       
       
