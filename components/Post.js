@@ -65,10 +65,10 @@ const unsubscribe=onSnapshot(
   
   return (
     
-    <div className="flex w-full border-[1px] border-slate-300 relative overflow-hidden group bg-black p-5 mt-4 mb-1 ring-1 ring-purple-500 rounded-md shadow-2xl shadow-black justify-start "> <div className="absolute inset-0 bg-purple-500 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
+    <div className="flex w-full border-[1px] border-slate-300 relative overflow-hidden group bg-gradient-to-t from-black via-black to-slate-800 p-5 mt-4 mb-1 ring-1 ring-purple-500 rounded-xl  shadow-md shadow-slate-500 justify-start "> <div className="absolute inset-0 bg-gradient-to-b from-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
       {/* user image */}
       <img
-        className="h-11 w-11 rounded-full mr-4 group-hover:scale-110"
+        className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-pink-300 ring-2 shadow-md shadow-slate-500 "
         src={post?.data()?.userImg}
         alt="user-img"
       />

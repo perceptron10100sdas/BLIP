@@ -50,12 +50,11 @@ export default function Sidebar() {
   
 
   return (
-    <div className=" hidden xl:flex  flex-col p-3 mt-3 mb-3 items-center fixed h-full xl:ml-24 bg-purple-500 rounded-md ring-1 ring-black shadow-lg shadow-black">
-    
+<div className=" hidden xl:flex  flex-col p-3 mt-3 mb-3 items-center fixed  h-full xl:ml-24 bg-purple-500 rounded-md ring-1 ring-white shadow-lg shadow-white bg-[url('/sidebar.jpg')] bg-cover bg-center ">    
 
     <div className=" ">
 
-  <h1 className='text-5xl font-light text-center overline '>BLIP</h1>
+  <h1 className='text-5xl text-white font-light text-center overline '>BLIP</h1>
 
 
 </div>
@@ -65,15 +64,15 @@ export default function Sidebar() {
 
       {/* Mini-Profile */}
 
-      <div className="mt-10 text-gray-700 space-y-7 items-center">
+      <div className=" mt-24 text-gray-700 space-y-7 items-center ">
         <img
             onClick={onSignOut}
             src={currentUser?.userImg}
           alt="user-img"
-          className="h-150 w-150 rounded-full xl:mr-2 ring-4 ring-black shadow-lg shadow-black mx-12 mt-12"
+          className="h-150 w-150 rounded-2xl xl:mr-2 ring-2 inset-14 ring-purple-500 p-2 shadow-lg shadow-white mx-12 mt-12 "
         />
         <div className="space-y-7 mt-4">
-          <h4 className=" text-4xl text-black font-thin ">{currentUser?.name}</h4>
+          <h4 className=" text-4xl text-sky-500 font-thin bg-white opacity-50 rounded-md p-2 ring-1 ring-fuchsia-600">{currentUser?.name}</h4>
           <p className=" text-white text-3xl font-thin">@{currentUser?.username}</p>
           
          
