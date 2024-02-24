@@ -82,7 +82,7 @@ const unsubscribe=onSnapshot(
             <h4 className=" font-extralight text-[15px] sm:text-[16px] hover:underline relative z-10 text-white group-hover:text-sm  group-hover:text-black">
               {post?.data()?.name}
             </h4>
-           
+            <p className="text-sm sm:text-[15px] text-black group-hover:text-white relative z-10">-{post?.data()?.username}@blip </p>
             
           </div>
 
