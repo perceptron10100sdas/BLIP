@@ -73,9 +73,7 @@ export default function CommentModal() {
               <span className="text-sm sm:text-[15px]">
                 @{post?.data()?.username} -{" "}
               </span>
-              <span className="text-sm sm:text-[15px] hover:underline">
-                <Moment fromNow>{post?.data()?.timestamp?.toDate()}</Moment>
-              </span>
+          
             </div>
             <p className="text-gray-500 text-[15px] sm:text-[16px] ml-16 mb-2">
               {post?.data()?.text}
