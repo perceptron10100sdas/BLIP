@@ -69,14 +69,12 @@ export default function CommentModal() {
                 src={post?.data()?.userImg}
                 alt="user-img"
               />
-              <h4 className="font-bold text-[15px] sm:text-[16px] hover:underline">
-                {post?.data()?.name}
-              </h4>
+              
               <span className="text-sm sm:text-[15px]">
                 @{post?.data()?.username} -{" "}
               </span>
               <span className="text-sm sm:text-[15px] hover:underline">
-               
+                <Moment fromNow>{post?.data()?.timestamp?.toDate()}</Moment>
               </span>
             </div>
             <p className="text-gray-500 text-[15px] sm:text-[16px] ml-16 mb-2">
