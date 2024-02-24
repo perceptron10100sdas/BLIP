@@ -15,6 +15,7 @@ import { db } from "../firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 import Moment from "react-moment";
 import { userState } from "../atom/userAtom";
+import Example from "./bubbletext";
 export default function CommentModal() {
   const [open, setOpen] = useRecoilState(modalState);
   const [postId] = useRecoilState(postIdState);
@@ -50,7 +51,7 @@ export default function CommentModal() {
         <Modal
           isOpen={open}
           onRequestClose={() => setOpen(false)}
-          className="max-w-lg w-[90%]  absolute top-24 left-[50%] translate-x-[-50%] bg-white  rounded-xl shadow-md"
+          className="max-w-lg w-[90%]  absolute top-24 left-[50%] translate-x-[-50%] bg-gradient-to-t from-blue-950 to-pink-500 opacity-90 rounded-xl shadow-md"
         >
           <div className="p-1">
             <div className="border-b border-gray-200 py-2 px-1.5">
@@ -75,7 +76,7 @@ export default function CommentModal() {
                 @{post?.data()?.username} -{" "}
               </span>
               <span className="text-sm sm:text-[15px] hover:underline">
-                <Moment fromNow>{post?.data()?.timestamp?.toDate()}</Moment>
+               
               </span>
             </div>
             <p className="text-gray-500 text-[15px] sm:text-[16px] ml-16 mb-2">
@@ -86,14 +87,14 @@ export default function CommentModal() {
               <img
                 src={currentUser.userImg}
                 alt="user-img"
-                className="h-11 w-11 rounded-full cursor-pointer hover:brightness-95"
+                className="h-11 w-11  cursor-pointer hover:brightness-95 rounded-2xl ring-2 ring-purple-500 p-1 "
               />
               <div className="w-full divide-y divide-gray-200">
                 <div className="">
                   <textarea
                     className="w-full border-none focus:ring-0 text-lg placeholder-gray-700 tracking-wide min-h-[50px] text-gray-700"
                     rows="2"
-                    placeholder="Tweet your reply"
+                    placeholder="Comments..."
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                   ></textarea>
@@ -120,7 +121,7 @@ export default function CommentModal() {
                     disabled={!input.trim()}
                     className="bg-black hover:bg-white text-white hover:text-black px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
                   >
-                    Share thoughts
+                    <Example/>
                   </button>
                 </div>
               </div>

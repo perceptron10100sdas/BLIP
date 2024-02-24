@@ -50,7 +50,7 @@ export default function Sidebar() {
   
 
   return (
-<div className=" hidden xl:flex  flex-col p-3 mt-3 mb-3 items-center fixed  h-full xl:ml-24 bg-purple-500 rounded-md ring-1 ring-white shadow-lg shadow-white bg-[url('/sidebar.jpg')] bg-cover bg-center ">    
+<div className=" hidden xl:flex  flex-col p-3 mt-3 mb-3 items-center fixed  h-full xl:ml-24  rounded-md ring-1 ring-white shadow-lg shadow-white bg-[url('/sidebar.jpg')] bg-cover bg-center  ">    
 
     <div className=" ">
 

@@ -11,6 +11,7 @@ import { collection,doc, onSnapshot, orderBy,
 import { db } from "../../firebase";
 import { ArrowLongLeftIcon } from "@heroicons/react/24/solid";
 import Comment from "../../components/Comment";
+import Example from "../../components/bubbletext";
 
 export default function PostPage({ newsResults, randomUsersResults }) {
   const router = useRouter();
@@ -46,19 +47,20 @@ export default function PostPage({ newsResults, randomUsersResults }) {
 
         {/* Feed */}
 
-        <div className="xl:ml-[370px] border-l border-r border-gray-200  xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl ">
-          <div className="flex items-center space-x-2  py-2 px-3 sticky top-0 z-50 bg-black border-b border-gray-200">
+        <div className="xl:ml-[370px]  xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl p-2">
+          <div className="flex items-center space-x-2  py-2 px-3 sticky top-0 z-50 bg-black ring-2 ring-blue-950 rounded-xl">
             <div className="hoverEffect" onClick={() => router.push("/")}>
-              <ArrowLongLeftIcon className="h-5 " />
+              <ArrowLongLeftIcon className="h-5  text-sky-600 " />
             </div>
             <h2 className="text-lg sm:text-xl text-white font-bold cursor-pointer">
-              Tweet
+              <Example/>
             </h2>
+            <p className="font-thin italic text-pink-300 text-xl">@postpages</p>
           </div>
 
-          <Post id={id} post={post} />
+          <Post id={id} post={post}  />
           {comments.length > 0 && (
-            <div className="">
+            <div className=" mt-5">
               {comments.map((comment) => (
                 <Comment
                   key={comment.id}
