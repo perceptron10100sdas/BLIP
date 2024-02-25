@@ -11,7 +11,7 @@ import { useRecoilState } from "recoil";
 import { userState } from "../atom/userAtom";
 import { db } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
-
+import Users from './Users';
 
 
 
@@ -20,6 +20,7 @@ import Example from './bubbletext';
 export default function Feed() {
   const router=useRouter()
   const [posts,setPosts]=useState([])
+  const [users,setUsers]=useState([])
   const [currentUser, setCurrentUser] = useRecoilState(userState);
   console.log(currentUser);
   const auth = getAuth();
@@ -52,6 +53,17 @@ export default function Feed() {
       ),
     []
   );
+  useEffect(
+    () =>
+      onSnapshot(
+        query(collection(db, "users"), orderBy("timestamp", "desc")),
+        (snapshot) => {
+          setUsers(snapshot.docs);
+        }
+      ),
+    []
+  );
+  
 
   
  
@@ -76,12 +88,15 @@ className="bg-black text-indigo-500  font-thin shadow-md hover:brightness-95 md:
 >
 Let's Blip
 </button></div></div>
-
+{users.map((user) => (
+        <Users key={user.id} id={user.id} user={user} />
+      ))}
 
       <Input/>
       {posts.map((post) => (
         <Post key={post.id} id={post.id} post={post} />
       ))}
+       
    
     </div>
   )
