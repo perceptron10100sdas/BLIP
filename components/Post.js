@@ -79,7 +79,7 @@ const unsubscribe=onSnapshot(
         <div className="flex items-center justify-between ">
           {/* post user info */}
           <div className="flex items-center space-x-1 whitespace-nowrap shadow-md">
-            <h4 className=" font-extralight text-[15px] sm:text-[16px] hover:underline relative z-10 text-white group-hover:text-sm  group-hover:text-black">
+            <h4 className=" font-extralight text-[15px] sm:text-[16px] hover:underline relative z-10 text-white group-hover:text-sm  group-hover:text-black" onClick={() => router.push(`/profile/${post?.data()?.id}`)}>
               {post?.data()?.name}
             </h4>
            
