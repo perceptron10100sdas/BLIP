@@ -14,7 +14,8 @@ import { db } from '../firebase';
 import Users from '../components/Users';
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 export default function Home() {
-  const [users,setUsers]=useState([])
+ const[users,setUsers]=useState([])
+ 
   useEffect(
     () =>
       onSnapshot(
@@ -25,6 +26,8 @@ export default function Home() {
       ),
     []
   );
+  console.log(users)
+
   
   return (
     <div >
