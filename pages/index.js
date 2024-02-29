@@ -13,6 +13,7 @@ import { db } from '../firebase';
 
 import Users from '../components/Users';
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { useAnimationFrame } from 'framer-motion';
 export default function Home() {
  const[users,setUsers]=useState([])
  
@@ -36,7 +37,7 @@ export default function Home() {
         <meta name="description" content="High dopamine content" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex  min-h-screen min-w-screen bg-[url('/sidebar.jpg')]  bg-cover bg-center ">
+      <main className="flex   min-h-screen max-w-screen bg-[url('/sidebar.jpg')] bg-fixed bg-center   ">
       <Sidebar/>
         <Feed/>
         

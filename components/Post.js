@@ -11,6 +11,7 @@ import { useRecoilState } from "recoil";
 import { modalState, postIdState } from "../atom/modalAtom";
 import { useRouter } from "next/router";
 import { userState } from "../atom/userAtom";
+import {motion} from "framer-motion"
 
 
 
@@ -65,7 +66,8 @@ const unsubscribe=onSnapshot(
   
   return (
     
-    <div className="flex w-full border-[1px] border-slate-300 relative overflow-hidden group bg-gradient-to-t from-black via-black to-slate-800 p-5 mt-4 mb-1 ring-1 ring-purple-500 rounded-xl  shadow-md shadow-slate-500 justify-start "> <div className="absolute inset-0 bg-gradient-to-b from-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
+    <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
+    transition={{duration:3, ease:"anticipate" }} className="flex w-full border-[1px] border-slate-300 relative overflow-hidden group bg-gradient-to-t from-black via-black to-slate-800 p-5 mt-4 mb-1 ring-1 ring-purple-500 rounded-xl  shadow-md shadow-slate-500 justify-start "> <div className="absolute inset-0 bg-gradient-to-b from-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
       {/* user image */}
       <img
         className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-pink-300 ring-2 shadow-md shadow-slate-500 "
@@ -160,6 +162,6 @@ const unsubscribe=onSnapshot(
         </div>
        
       
-    </div></div>
+    </div></motion.div>
   );
 }
