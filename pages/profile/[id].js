@@ -13,24 +13,19 @@ import { userState } from '../../atom/userAtom';
 
 export default function profile() {
   const router = useRouter();
-  const { id } = router.query;
-  const uid=id;
+  const { uid } = router.query;
+ console.log(uid)
+  
   const [currentUser]=useRecoilState(userState);
   
   
   const [profile, setProfile] = useState(null);
-  console.log(currentUser.uid)
+ 
 
   useEffect(
-    () => onSnapshot(doc(db, "users", uid), async (snapshot) => setProfile(snapshot)),
+    () => onSnapshot(doc(db, "users", {uid}), (snapshot) => setProfile(snapshot)),
     [db, uid]
   );
-  async function follow(){
-    await setDoc(doc(db, "users", uid, "followers",currentUser?.uid)),{
-      username:currentUser?.uid,
-    }
-  }
-
    
   return (
     <div>
@@ -44,7 +39,7 @@ export default function profile() {
       <img src={profile?.data()?.userImg} width="200px" className=' mx-16 rounded-2xl ring-2 ring-white p-2'/>
  <h1 className='font-thin md:text-6xl text-4xl text-center mt-4'>{profile?.data()?.name}</h1>
  <h1 className='font-thin md:text-4xl sm:text-2xl text-center mt-6'>blip@{profile?.data()?.username}</h1>
- <button onClick={follow}> follow
+ <button onClick=""> follow
   </button></div></div>
  
     </div>

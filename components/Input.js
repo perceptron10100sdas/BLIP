@@ -70,7 +70,7 @@ export default function Input() {
   return (
 <>
     {currentUser && (
-      <div className="flex rounded-md p-4 mt-3 space-x-3 ring-2 ring-white shadow-md shadow-white">
+      <div className="flex rounded-md p-4 mt-3 space-x-3 ring-2 ring-white shadow-md shadow-white bg-white bg-opacity-25">
         <img
          onClick={onSignOut}
          src={currentUser?.userImg}

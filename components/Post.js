@@ -24,6 +24,8 @@ export default function Post({ post, id }) {
   const [postId, setPostId] = useRecoilState(postIdState);
   const router = useRouter();
   const [currentUser] = useRecoilState(userState);
+  const uid=post?.data()?.id
+  console.log(uid)
 
   useEffect(()=>{
 const unsubscribe=onSnapshot(
@@ -67,7 +69,7 @@ const unsubscribe=onSnapshot(
   return (
     
     <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
-    transition={{duration:3, ease:"anticipate" }} className="flex w-full border-[1px] border-slate-300 relative overflow-hidden group bg-gradient-to-t from-black via-black to-slate-800 p-5 mt-4 mb-1 ring-1 ring-purple-500 rounded-xl  shadow-md shadow-slate-500 justify-start "> <div className="absolute inset-0 bg-gradient-to-b from-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
+    transition={{duration:3, ease:"anticipate" }} className="flex w-full border-[1px] border-slate-300 relative overflow-hidden group bg-gradient-to-t from-black via-black to-slate-800  p-5 mt-4 mb-1 ring-1 ring-purple-500 rounded-xl  shadow-md shadow-slate-500 justify-start "> <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
       {/* user image */}
       <img
         className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-pink-300 ring-2 shadow-md shadow-slate-500 "
@@ -81,7 +83,7 @@ const unsubscribe=onSnapshot(
         <div className="flex items-center justify-between ">
           {/* post user info */}
           <div className="flex items-center space-x-1 whitespace-nowrap shadow-md">
-            <h4 className=" font-extralight text-[15px] sm:text-[16px] hover:underline relative z-10 text-white group-hover:text-sm  group-hover:text-black" onClick={() => router.push(`/profile/${post?.data()?.id}`)}>
+            <h4 className=" font-extralight text-[15px] sm:text-[16px] hover:underline relative z-10 text-white group-hover:text-xl group-hover:overline  group-hover:text-purple-400" onClick={() => router.push(`/profile/${uid}`)}>
               {post?.data()?.name}
             </h4>
            
@@ -127,7 +129,7 @@ const unsubscribe=onSnapshot(
               className="h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100 text-black group-hover:text-white relative z-10"
             />
             {comments.length > 0 && (
-              <span className="text-sm">{comments.length}</span>
+              <span className="text-sm text-black group-hover:text-white relative z-10">{comments.length}</span>
             )}
           </div> <div className="flex items-center">
             {hasLiked ? (
@@ -138,12 +140,12 @@ const unsubscribe=onSnapshot(
             ) : (
               <HeartIcon
                 onClick={likePost}
-                className="h-9 w-9  p-2    group-hover:bg-transparent  group-hover:text-white relative z-10  "
+                className="h-9 w-9  p-2  text-black  group-hover:bg-transparent  group-hover:text-white relative z-10  "
               />
             )}
             {likes.length > 0 && (
               <span
-                className={`${hasLiked && "text-red-600"} text-sm select-none relative z-10`}
+                className={`${hasLiked && "text-red-600"} text-black group-hover:text-white  hidden group-hover:block  text-sm select-none relative z-10`}
               >
                 {" "}
                 {likes.length}
