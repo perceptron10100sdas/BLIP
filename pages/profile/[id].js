@@ -39,7 +39,7 @@ export default function profile() {
           <h1 className='font-thin text-pink-500 italic'>@verified</h1></div></div>
       {/*<img src="/logo.jpg" width="200px" className=' mx-16 rounded-2xl ring-2 ring-white p-2'/> */}
       
- <h1 className='font-thin text-white md:text-6xl mt-6'>Sambhav Das</h1>
+ <h1 className='font-thin text-white text-2xl md:text-6xl mt-6'>Sambhav Das</h1>
  <h1 className='font-thin md:text-4xl sm:text-2xl  mt-6 text-orange-500'>@ceosambhavdas17</h1>
  <div className='flex justify-evenly'>
  <h1 className='   mt-6  bg-indigo-700 md:text-xl  p-3 text-orange-600  z-10 rounded-2xl bg-opacity-70 flex ring-1 ring-orange-700'>Followers<p className='mx-2'>10100</p></h1>
