@@ -10,7 +10,7 @@ import { RxCross1 } from "react-icons/rx";
 
 
 export default function Navig() {
-  const [openNavigation, setOpenNavigation] = useState(true);
+  const [openNavigation, setOpenNavigation] = useState(false);
  
     const toggleNavigation = () => {
       if (openNavigation) {
@@ -28,7 +28,7 @@ export default function Navig() {
       
 
       
-   <div className={`${openNavigation ? "flex" : "hidden"}  fixed  left-3 bg-slate-900 h-full p-3 bg-opacity-70 rounded-2xl ring-2 ring-blue-950 shadow-2xl shadow-black z-10`}>
+   <div className={`${openNavigation ? "flex" : "hidden xl:flex"}  fixed  left-3 bg-slate-900 h-full p-3 bg-opacity-70 rounded-2xl ring-2 ring-blue-950 shadow-2xl shadow-black z-10`}>
 
 
 <HoverDevCards/>
