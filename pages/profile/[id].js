@@ -12,7 +12,7 @@ import { userState } from '../../atom/userAtom';
 
 
 export default function profile() {
-  const router = useRouter();
+ {/* const router = useRouter();
   const { uid } = router.query;
  console.log(uid)
   
@@ -23,23 +23,31 @@ export default function profile() {
  
 
   useEffect(
-    () => onSnapshot(doc(db, "users", {uid}), (snapshot) => setProfile(snapshot)),
+    () => onSnapshot(doc(db, "users", uid), (snapshot) => setProfile(snapshot)),
     [db, uid]
   );
+  */}
    
   return (
     <div>
-    <div className="bg-[url('/sidebar.jpg')]   bg-cover bg-center h-screen  grid items-center justify-center">
+    <div className="bg-gradient-to-b from-indigo-800  to-rose-500  bg-cover bg-center h-screen  grid items-center justify-center">
      
-        <div className=' flex flex-col bg-white p-4 rounded-xl bg-opacity-50 ring-2 ring-white '>
+        <div className=' flex flex-col bg-gradient-to-bl from-indigo-800 via-black to-rose-500 p-4 rounded-xl bg-opacity-40 ring-1 ring-black shadow-lg shadow-black w-[550px] h-[350px] '>
           <div className=' flex justify-end  p-3'>
             <div className='bg-white flex p-3 rounded-xl'>
           <h1 className='text-end'>BLIP</h1>
           <h1 className='font-thin text-pink-500 italic'>@verified</h1></div></div>
-      <img src={profile?.data()?.userImg} width="200px" className=' mx-16 rounded-2xl ring-2 ring-white p-2'/>
- <h1 className='font-thin md:text-6xl text-4xl text-center mt-4'>{profile?.data()?.name}</h1>
- <h1 className='font-thin md:text-4xl sm:text-2xl text-center mt-6'>blip@{profile?.data()?.username}</h1>
- <button onClick=""> follow
+      {/*<img src="/logo.jpg" width="200px" className=' mx-16 rounded-2xl ring-2 ring-white p-2'/> */}
+      
+ <h1 className='font-thin text-white md:text-6xl mt-6'>Sambhav Das</h1>
+ <h1 className='font-thin md:text-4xl sm:text-2xl  mt-6 text-orange-500'>@ceosambhavdas17</h1>
+ <div className='flex justify-evenly'>
+ <h1 className='   mt-6  bg-indigo-700 p-3 text-orange-600 text-xl z-10 rounded-2xl bg-opacity-70 flex ring-1 ring-orange-700'>Followers<p className='mx-2'>10100</p></h1>
+ <h1 className='   mt-6  bg-orange-700 p-3 text-indigo-600 text-xl z-10 rounded-2xl bg-opacity-90 flex ring-1 ring-indigo-700'>Following<p className='mx-2'>17</p></h1></div>
+ </div>
+ <div className='grid justify-center bg-white rounded-full bg-opacity-40 brightness-125 ring-1 ring-black p-3 mt-3'>
+ <img src='/logo.jpg' width="200" height="200" className=' text-2xl rounded-full ring-2 ring-sky-500'/>
+ <button onClick=""  className=' text-2xl rounded-full bg-slate-300 mt-2 font-thin ring-2 p-2 ring-pink-500'> Follow
   </button></div></div>
  
     </div>

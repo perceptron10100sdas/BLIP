@@ -22,6 +22,7 @@ import { useRecoilState } from "recoil";
 import { userState } from "../atom/userAtom";
 import { useRouter } from "next/router";
 import Example from './bubbletext'
+import {motion } from "framer-motion"
 
 
 export default function Sidebar() {
@@ -51,7 +52,7 @@ export default function Sidebar() {
   
 
   return (
-<div className="hidden xl:flex  flex-col  mt-3 mb-3 items-center fixed right-7  h-full xl:ml-24  rounded-xl ring-1 ring-white shadow-lg shadow-slate-400 bg-gradient-to-t from-black  to-slate-800   bg-cover bg-center p-5">    
+<div className="hidden xl:flex  flex-col  mt-3 mb-3 items-center fixed right-7  h-full xl:ml-24  rounded-xl ring-2 ring-slate-950 shadow-2xl shadow-slate-950 bg-gradient-to-t from-black  to-slate-800   bg-cover bg-center p-5">    
 
     <div className=" ">
 
@@ -78,17 +79,17 @@ export default function Sidebar() {
           
          
         </div>
-        
-        <div className='bg-white bg-opacity-25 flex p-3 rounded-xl justify-center mt-1 '>
+        <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
+    transition={{duration:3, ease:"anticipate" }} className='text-white bg-gradient-to-r from-black to-blue-950 ring-1 ring-slate-700 rounded-xl    p-2 flex justify-between shadow-lg shadow-black'>
+        <h1 className='font-thin text-sky-500' >Followers</h1><p className=' text-pink-500'>10100</p></motion.div>
+        <motion.div initial={{scale:0.45}} animate={{scale:1}}
+    transition={{duration:4, ease:"linear" }} className='text-white bg-gradient-to-l from-black to-blue-950 ring-1 ring-slate-700 rounded-xl    p-2 flex justify-between shadow-lg shadow-black'>
+        <h1 className='font-thin text-pink-500' >Following</h1><p className=' text-sky-500'>17</p></motion.div>
+        <div className='bg-white bg-opacity-25 flex p-3 rounded-xl justify-center mt-1  '>
           <h1 className='text-sky-500'>BLIP</h1>
           <h1 className='font-thin text-pink-500 italic'>@verified</h1></div>
       </div>
-      <button  onClick={() => router.push("/")} className="bg-black text-white hover:bg-white hover:text-black rounded-full w-56 h-12 font-thin shadow-md hover:brightness-95 text-lg hidden xl:inline mt-7">
-      Express
-      </button>
-      <button  onClick={() => router.push("/explore/explore")} className="bg-black text-white hover:bg-white hover:text-black rounded-full w-56 h-12 font-thin shadow-md hover:brightness-95 text-lg hidden xl:inline mt-7">
-      Explore
-      </button>
+     
     </>
   ) : (
     <button

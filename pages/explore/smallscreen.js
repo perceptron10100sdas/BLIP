@@ -22,6 +22,7 @@ import { useRecoilState } from "recoil";
 import { userState } from "../../atom/userAtom";
 import { useRouter } from "next/router";
 import Example from '../../components/bubbletext'
+import {motion} from "framer-motion"
 
 
 
@@ -52,8 +53,8 @@ export default function smallscreen() {
   
 
   return (
-    <div className='bg-black'>
-    <div className="grid justify-center fixed h-screen w-full  bg-black rounded-md ring-1 ring-black shadow-lg shadow-black">
+    <div className='bg-gradient-to-t from-black to-slate-800'>
+    <div className="grid justify-center fixed h-screen w-full  bg-gradient-to-b from-black to-slate-800 rounded-md ring-1 ring-black shadow-lg shadow-black">
     
 
     <div className=" ">
@@ -74,7 +75,7 @@ export default function smallscreen() {
             onClick={onSignOut}
             src={currentUser?.userImg}
           alt="user-img"
-          className="h-150 w-150 rounded-full xl:mr-2 ring-4 ring-sky-500 shadow-lg shadow-sky-500 mx-12 mt-12"
+          className="h-150 w-150 rounded-2xl xl:mr-2 ring-4 ring-sky-500 shadow-lg shadow-sky-500 mx-12 mt-12"
         />
         <div className="space-y-7 mt-4">
           <h4 className=" text-4xl text-sky-500 font-thin ">{currentUser?.name}</h4>
@@ -84,12 +85,16 @@ export default function smallscreen() {
         </div>
         
       </div>
-      <button  onClick={() => router.push("/")} className="bg-pink-500 text-white hover:bg-white hover:text-black rounded-full w-56 h-12 font-thin shadow-md hover:brightness-95 text-lg  mt-7">
-      Express
-      </button>
-      <button  onClick={() => router.push("/explore/explore")} className="bg-pink-500 text-white hover:bg-white hover:text-black rounded-full w-56 h-12 font-thin shadow-md hover:brightness-95 text-lg  mt-7">
-      Explore
-      </button>
+    <div className=' flex flex-col space-y-5'>
+      <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
+    transition={{duration:3, ease:"anticipate" }} className='text-white bg-gradient-to-r from-black to-blue-950 ring-1 ring-slate-700 rounded-xl    p-2 flex justify-between shadow-lg shadow-black'>
+        <h1 className='font-thin text-sky-500 ' >Followers</h1><p className=' text-pink-500'>10100</p></motion.div>
+        <motion.div initial={{scale:0.45}} animate={{scale:1}}
+    transition={{duration:4, ease:"linear" }} className='text-white bg-gradient-to-l from-black to-blue-950 ring-1 ring-slate-700 rounded-xl    p-2 flex justify-between shadow-lg shadow-black'>
+        <h1 className='font-thin text-pink-500' >Following</h1><p className=' text-sky-500'>17</p></motion.div>
+        <div className='bg-white bg-opacity-25 flex p-3 rounded-xl justify-center mt-1  '>
+          <h1 className='text-sky-500'>BLIP</h1>
+          <h1 className='font-thin text-pink-500 italic'>@verified</h1></div></div>
     </>
   ) : (
     <button

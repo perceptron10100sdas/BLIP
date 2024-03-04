@@ -69,7 +69,7 @@ const unsubscribe=onSnapshot(
   return (
     
     <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
-    transition={{duration:3, ease:"anticipate" }} className="flex w-full border-[1px] border-slate-300 relative overflow-hidden group bg-gradient-to-t from-black via-black to-slate-800  p-5 mt-4 mb-1 ring-1 ring-purple-500 rounded-xl  shadow-md shadow-slate-500 justify-start "> <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
+    transition={{duration:3, ease:"anticipate" }} className="flex w-full  relative overflow-hidden group bg-black  p-5 mt-5 mb-4 ring-2 ring-black rounded-2xl  shadow-xl shadow-black justify-start bg-opacity-75 "> <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 bg-opacity-60" />
       {/* user image */}
       <img
         className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-pink-300 ring-2 shadow-md shadow-slate-500 "
@@ -115,7 +115,7 @@ const unsubscribe=onSnapshot(
 
         {/* icons */}
 
-        <div className=" flex justify-evenly bg-black bg-clip-padding  text-gray-500 p-2">
+        <div className=" flex justify-evenly bg-transparent bg-clip-padding  text-gray-500 p-2">
         <div className="flex items-center select-none">
             <ChatBubbleBottomCenterIcon
               onClick={() => {
@@ -126,10 +126,10 @@ const unsubscribe=onSnapshot(
                   setOpen(!open);
                 }
               }}
-              className="h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100 text-black group-hover:text-white relative z-10"
+              className="h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100 text-transparent group-hover:text-white relative z-10"
             />
             {comments.length > 0 && (
-              <span className="text-sm text-black group-hover:text-white relative z-10">{comments.length}</span>
+              <span className="text-sm text-transparent group-hover:text-white relative z-10">{comments.length}</span>
             )}
           </div> <div className="flex items-center">
             {hasLiked ? (
@@ -140,7 +140,7 @@ const unsubscribe=onSnapshot(
             ) : (
               <HeartIcon
                 onClick={likePost}
-                className="h-9 w-9  p-2  text-black  group-hover:bg-transparent  group-hover:text-white relative z-10  "
+                className="h-9 w-9  p-2  text-transparent  group-hover:bg-transparent  group-hover:text-white relative z-10  "
               />
             )}
             {likes.length > 0 && (
@@ -155,7 +155,7 @@ const unsubscribe=onSnapshot(
           {currentUser?.uid === post?.data()?.id && (
             <TrashIcon
               onClick={deletePost}
-              className="h-9 w-9 hoverEffect text-black group-hover:text-white relative z-10 p-2 hover:text-red-600 hover:bg-red-100"
+              className="h-9 w-9 hoverEffect text-transparent group-hover:text-white relative z-10 p-2 hover:text-red-600 hover:bg-red-100"
             />
           )}
          

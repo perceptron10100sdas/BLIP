@@ -2,24 +2,37 @@ import React from 'react'
 import { HomeIcon } from '@heroicons/react/24/outline'
 
 import { Home } from '@mui/icons-material'
+import HoverDevCards from './cards'
+import { IoIosMenu } from 'react-icons/io'
+import { useState } from 'react'
+import { RxCross1 } from "react-icons/rx";
 
 
 
 export default function Navig() {
+  const [openNavigation, setOpenNavigation] = useState(true);
+ 
+    const toggleNavigation = () => {
+      if (openNavigation) {
+        setOpenNavigation(false);
+        
+      } else {
+        setOpenNavigation(true);
+       
+      }
+    };
+    console.log(openNavigation)
   return (
-   <div className='fixed  left-3 bg-slate-900 h-full p-3 bg-opacity-50'>
+    <div className='z-10'>
+      <button onClick={toggleNavigation} className=' xl:hidden fixed bottom-2 left-40 text-white bg-black p-3  z-20 text-3xl rounded-2xl bg-opacity-70 '  >{openNavigation ? <RxCross1/> : <IoIosMenu/>} </button>
+      
 
-<h1 className='text-4xl text-sky-500 bg-gradient-to-r from-black  to-slate-800 p-4 rounded-3xl font-thin ring-2 ring-sky-400 mt-5 '>Home </h1>
-<div className='mt-10'>
-<h1 className='text-4xl text-pink-500 bg-gradient-to-r from-black  to-slate-800 p-4 rounded-3xl font-thin ring-2 ring-pink-400'>Blip@Trending </h1></div>
+      
+   <div className={`${openNavigation ? "flex" : "hidden"}  fixed  left-3 bg-slate-900 h-full p-3 bg-opacity-70 rounded-2xl ring-2 ring-blue-950 shadow-2xl shadow-black z-10`}>
 
-<p  className=' mt-16 animate-bounce overline text-white'>coming soon </p>
-<div className='mt-6 animate-pulse duration-1000'>
-<h1 className='text-4xl text-blue-500 bg-gradient-to-r from-black  to-slate-800 p-4 rounded-3xl font-thin ring-2 ring-blue-500'>MY@Spaces</h1></div>
-<div className='mt-6 animate-pulse duration-1000'>
-<h1 className='text-4xl text-white bg-gradient-to-r from-black  to-slate-800 p-4 rounded-3xl font-thin ring-2 ring-white'>Blip@Blippers</h1></div>
 
-        </div>
+<HoverDevCards/>
+        </div></div>
   
   )
 }

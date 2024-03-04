@@ -39,7 +39,7 @@ export default function Home() {
         <meta name="description" content="High dopamine content" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex justify-evenly  min-h-screen max-w-screen bg-[url('/sidebar.jpg')] bg-fixed bg-center  ">
+      <main className="flex justify-evenly  min-h-screen max-w-screen bg-gradient-to-r from-black via-indigo-700  to-rose-400  bg-fixed bg-center  ">
       <Navig/>
         <Feed/>
         <Sidebar/>

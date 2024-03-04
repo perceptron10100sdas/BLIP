@@ -12,6 +12,7 @@ import { db } from "../../firebase";
 import { ArrowLongLeftIcon } from "@heroicons/react/24/solid";
 import Comment from "../../components/Comment";
 import Example from "../../components/bubbletext";
+import Navig from "../../components/navig";
 
 export default function PostPage({ newsResults, randomUsersResults }) {
   const router = useRouter();
@@ -34,6 +35,7 @@ export default function PostPage({ newsResults, randomUsersResults }) {
     );
   }, [db, id]);
   return (
+    
     <div>
       <Head>
         <title>Post Page</title>
@@ -43,6 +45,7 @@ export default function PostPage({ newsResults, randomUsersResults }) {
 
       <main className="flex min-h-screen mx-auto bg-black ">
         {/* Sidebar */}
+        <Navig/>
         <Sidebar />
 
         {/* Feed */}
