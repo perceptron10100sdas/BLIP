@@ -80,12 +80,12 @@ Let's Blip
 </button></div></div>
 
 
-      <Input/>
+<Input/>
       {posts.map((post) => (
         <Post key={post.id} id={post.id} post={post} />
       ))}
        
-   
+      
     </div>
   )
 }

@@ -40,6 +40,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex justify-between  min-h-screen max-w-screen bg-gradient-to-r from-black via-indigo-700  to-rose-400  bg-fixed bg-center  ">
+       
       <Navig/>
         <Feed/>
         <Sidebar/>

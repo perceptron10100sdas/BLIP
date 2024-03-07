@@ -43,7 +43,7 @@ export default function PostPage({ newsResults, randomUsersResults }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-screen mx-auto bg-black ">
+      <main className="flex min-h-screen mx-auto bg-gradient-to-r from-black via-indigo-700  to-rose-400 ">
         {/* Sidebar */}
         <Navig/>
         <Sidebar />
