@@ -12,7 +12,7 @@ import { getAuth } from "firebase/auth";
 import { listAll } from "firebase/storage";
 import { db } from '../firebase';
 
-import Users from '../components/Users';
+
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { useAnimationFrame } from 'framer-motion';
 import Navig from '../components/navig';
