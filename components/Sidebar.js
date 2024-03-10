@@ -52,11 +52,11 @@ export default function Sidebar() {
   
 
   return (
-<div className="hidden xl:flex  flex-col  mt-3 mb-3 items-center fixed right-7  h-full xl:ml-24  rounded-xl ring-2 ring-slate-950 shadow-2xl shadow-slate-950 bg-gradient-to-t from-black  to-slate-800   bg-cover bg-center p-5">    
+<div className="hidden xl:flex flex-col  mt-2 mb-3 items-center fixed right-7  h-full xl:ml-24  rounded-xl ring-2 ring-slate-950 shadow-2xl shadow-slate-950 bg-transparent   bg-cover bg-center p-5">    
 
     <div className=" ">
 
-<h1 className='overline text-6xl text-sky-300'>BLIP</h1>
+
 
 
 </div>
@@ -66,7 +66,7 @@ export default function Sidebar() {
 
       {/* Mini-Profile */}
 
-      <div className=" mt-24 text-gray-700 space-y-7 items-center ">
+      <div className=" mt-16 text-gray-700 space-y-7 items-center ">
         <img
             onClick={onSignOut}
             src={currentUser?.userImg}
@@ -74,7 +74,7 @@ export default function Sidebar() {
           className="h-150 w-150 rounded-2xl xl:mr-2 ring-2 inset-14 ring-pink-500 p-2 shadow-lg shadow-white mx-12 mt-12 "
         />
         <div className="space-y-7 mt-4">
-          <h4 className=" text-4xl text-sky-500   rounded-md p-2 ">{currentUser?.name}</h4>
+          <h4 className=" text-4xl text-indigo-950   rounded-md p-2 ">{currentUser?.name}</h4>
           <p className=" text-white text-3xl font-thin mx-3 ">@{currentUser?.username}</p>
           
          
@@ -85,7 +85,7 @@ export default function Sidebar() {
         <motion.div initial={{scale:0.45}} animate={{scale:1}}
     transition={{duration:4, ease:"linear" }} className='text-white bg-gradient-to-l from-black to-blue-950 ring-1 ring-slate-700 rounded-xl    p-2 flex justify-between shadow-lg shadow-black'>
         <h1 className='font-thin text-pink-500' >Following</h1><p className=' text-sky-500'>17</p></motion.div>
-        <div className='bg-white bg-opacity-25 flex p-3 rounded-xl justify-center mt-1  '>
+        <div className='bg-white  flex p-3 rounded-xl justify-center mt-1  '>
           <h1 className='text-sky-500'>BLIP</h1>
           <h1 className='font-thin text-pink-500 italic'>@verified</h1></div>
       </div>

@@ -24,7 +24,7 @@ export default function PostPage({ newsResults, randomUsersResults }) {
     () => onSnapshot(doc(db, "posts", id), (snapshot) => setPost(snapshot)),
     [db, id]
   );
-
+console.log(id)
   useEffect(() => {
     onSnapshot(
       query(

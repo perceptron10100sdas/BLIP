@@ -12,21 +12,22 @@ import { userState } from '../../atom/userAtom';
 import {motion} from "framer-motion"
 
 export default function profile() {
- {/* const router = useRouter();
-  const { uid } = router.query;
- console.log(uid)
+  const router = useRouter();
+ 
+  const {id}=router.query
+
   
   const [currentUser]=useRecoilState(userState);
   
   
-  const [profile, setProfile] = useState(null);
+  const [profile, setProfile] = useState();
  
 
   useEffect(
-    () => onSnapshot(doc(db, "users", uid), (snapshot) => setProfile(snapshot)),
-    [db, uid]
+    () => onSnapshot(doc(db, "users", id), (snapshot) => setProfile(snapshot)),
+    [db, id]
   );
-  */}
+  
    
   return (
     <div>
@@ -40,16 +41,16 @@ export default function profile() {
           <h1 className='font-thin text-pink-500 italic'>@verified</h1></div></div>
       {/*<img src="/logo.jpg" width="200px" className=' mx-16 rounded-2xl ring-2 ring-white p-2'/> */}
       
- <h1 className='font-thin text-white text-2xl md:text-6xl mt-6'>Sambhav Das</h1>
- <h1 className='font-thin md:text-4xl sm:text-2xl  mt-6 text-orange-500'>@ceosambhavdas17</h1>
+ <h1 className='font-thin text-white text-2xl md:text-6xl mt-6'>{profile?.data()?.name}</h1>
+ <h1 className='font-thin md:text-4xl sm:text-2xl  mt-6 text-orange-500'>@{profile?.data()?.username}</h1>
  <div className='flex justify-evenly'>
  <h1 className='   mt-6  bg-indigo-700 md:text-xl  p-3 text-orange-600  z-10 rounded-2xl bg-opacity-70 flex ring-1 ring-orange-700'>Followers<p className='mx-2'>10100</p></h1>
  <h1 className='   mt-6  bg-orange-700 md:text-xl  p-3 text-indigo-600  z-10 rounded-2xl bg-opacity-90 flex ring-1 ring-indigo-700'>Following<p className='mx-2'>17</p></h1></div>
  </motion.div>
  <motion.div initial={{ y:100,opacity:0}} animate={{ y: 0,opacity:1}}
     transition={{duration:5, ease:"anticipate" }} className='grid justify-center bg-white rounded-2xl bg-opacity-40 brightness-125 ring-1 ring-black p-3 mt-3'>
- <img src='/logo.jpg' width="200" height="200" className=' rounded-full mt-7 ring-2 ring-sky-500  relative bottom-20  items-center left-8'/>
- <div className=' grid justify-center'><p>Start Following @SambhavDas on BLIP</p> <button onClick=""  className=' text-2xl rounded-2xl bg-blue-500 text-white font-thin ring-2 p-2 ring-pink-500 mt-6'> Follow
+ <img src={profile?.data()?.userImg} width="200" height="200" className=' rounded-full mt-7 ring-2 ring-sky-500  relative bottom-20  items-center left-8'/>
+ <div className=' grid justify-center'><p>Start Following @{profile?.data()?.name} on BLIP</p> <button onClick=""  className=' text-2xl rounded-2xl bg-blue-500 text-white font-thin ring-2 p-2 ring-pink-500 mt-6'> Follow
   </button></div>
  
 </motion.div></div>

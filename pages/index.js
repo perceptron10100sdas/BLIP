@@ -16,20 +16,11 @@ import Users from '../components/Users';
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { useAnimationFrame } from 'framer-motion';
 import Navig from '../components/navig';
+import Header from '../components/Header';
 export default function Home() {
- const[users,setUsers]=useState([])
+
  
-  useEffect(
-    () =>
-      onSnapshot(
-        query(collection(db, "users"), orderBy("timestamp", "desc")),
-        (snapshot) => {
-          setUsers(snapshot.docs);
-        }
-      ),
-    []
-  );
-  console.log(users)
+  
 
   
   return (
@@ -39,16 +30,15 @@ export default function Home() {
         <meta name="description" content="High dopamine content" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex justify-between  min-h-screen max-w-screen bg-gradient-to-r from-black via-indigo-700  to-rose-400  bg-fixed bg-center  ">
+      <Header/>
+      <main className="flex justify-between  min-h-screen max-w-screen bg-gradient-to-r from-purple-950 via-indigo-900  to-rose-500  bg-fixed bg-center  ">
        
-      <Navig/>
+      
         <Feed/>
         <Sidebar/>
          
 <CommentModal />
-{users.map((user) => (
-        <Users key={user.id} id={user.id} user={user} />
-      ))}
+
 
       </main>
       

@@ -3,7 +3,7 @@ import styles from "./bubble.module.css";
 
 const Example = () => {
   return (
-    <div className=" bg-black">
+    <div className=" bg-transparent">
       <BubbleText />
     </div>
   );

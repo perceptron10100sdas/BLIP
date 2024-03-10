@@ -69,10 +69,10 @@ const unsubscribe=onSnapshot(
   return (
     
     <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
-    transition={{duration:3, ease:"anticipate" }} className="flex w-full  relative overflow-hidden group bg-black  p-5 mt-5 mb-4 ring-2 ring-black rounded-2xl  shadow-xl shadow-black justify-start bg-opacity-75 backdrop-blur-2xl"> <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 bg-opacity-60" />
+    transition={{duration:3, ease:"anticipate" }} className="flex w-full  relative overflow-hidden group bg-black p-6 mt-5 mb-4 ring-2 ring-black rounded-2xl  shadow-lg shadow-black justify-start bg-opacity-50 backdrop-blur-2xl"> <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 bg-opacity-60" />
       {/* user image */}
       <img
-        className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-pink-300 ring-2 shadow-md shadow-slate-500 "
+        className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-orange-500 ring-2 shadow-md shadow-slate-500 "
         src={post?.data()?.userImg}
         alt="user-img"
       />
