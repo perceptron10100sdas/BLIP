@@ -17,9 +17,9 @@ import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { useAnimationFrame } from 'framer-motion';
 import Navig from '../components/navig';
 import Header from '../components/Header';
+import User from './people/user';
 export default function Home() {
 
- 
   
 
   
