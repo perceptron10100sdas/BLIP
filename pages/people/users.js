@@ -2,7 +2,7 @@ import React from 'react'
 import { db,storage } from '../../firebase'
 import { useState,useEffect } from 'react'
 import { collection,query,orderBy,onSnapshot } from 'firebase/firestore'
-import User from './user'
+import User from './user' 
 import { useRecoilState } from 'recoil'
 import { userState } from '../../atom/userAtom'
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
