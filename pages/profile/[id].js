@@ -37,7 +37,7 @@ export default function profile() {
     transition={{duration:3, ease:"anticipate" }}    className=' flex flex-col bg-gradient-to-bl from-indigo-800 via-black to-rose-500 p-4 rounded-xl bg-opacity-40 ring-1 ring-black shadow-lg shadow-black md:w-[550px] md:h-[350px] max-w-screen-sm mb-20'>
           <div className=' flex justify-end  p-3'>
             <div className='bg-white flex p-3 rounded-xl'>
-          <h1 className='text-end'>BLIP</h1>
+            <h1 className='text-end'>BLIP</h1>
           <h1 className='font-thin text-pink-500 italic'>@verified</h1></div></div>
       {/*<img src="/logo.jpg" width="200px" className=' mx-16 rounded-2xl ring-2 ring-white p-2'/> */}
       

@@ -7,6 +7,7 @@ import { useRecoilState } from 'recoil'
 import { userState } from '../../atom/userAtom'
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
+import Example from '../../components/bubbletext'
 
 
 export default function users() {
@@ -45,7 +46,9 @@ export default function users() {
   );
   return (
     <div className='bg-black h-full p-4'>
-    <h1>Blipp @people</h1>  
+      <div className='flex justify-center '>
+     <Example/>
+          <h1 className='font-thin text-pink-500 p-2 rounded-2xl  italic bg-white text-2xl'>@users</h1></div>
     {users.map((user) => (
         <User key={user.id} id={user.id} user={user} />
       ))}
