@@ -70,17 +70,17 @@ export default function Input() {
   return (
 <>
     {currentUser && (
-      <div className="flex    rounded-2xl p-4 mt-4 space-x-3 ring-2 ring-white shadow-xl shadow-black bg-white bg-opacity-30  z-30 ">
+      <div className="flex    rounded-2xl p-4 mt-2 space-x-3   bg-lime-400  z-30 shadow-xl shadow-lime-200 ">
         <img
          onClick={onSignOut}
          src={currentUser?.userImg}
           alt="user-img"
-          className="h-11 w-11 rounded-xl p-1 ring-1 ring-pink-400 cursor-pointer hover:brightness-95"
+          className="h-11 w-11 rounded-xl p-1 ring-1 ring-black cursor-pointer hover:brightness-95"
         />
         <div className="w-full divide-y divide-gray-200">
           <div className="">
           <textarea
-                className="w-full border-none focus:ring-0 text-lg placeholder-pink-500 placeholder-font-thin tracking-wide min-h-[50px] text-white bg-inherit"
+                className="w-full border-none focus:ring-0 text-lg placeholder-black placeholder-font-thin tracking-wide min-h-[50px] text-white bg-inherit"
                 rows="2"
                 placeholder="What's happening?"
                 value={input}
@@ -107,7 +107,7 @@ export default function Input() {
                       className=""
                       onClick={() => filePickerRef.current.click()}
                     >
-                      <PhotoIcon className="h-10 w-10 hoverEffect p-2 text-pink-500 rounded-full bg-white ring-2 shadow-sm shadow-white hover:bg-purple-100" />
+                      <PhotoIcon className="h-10 w-10 hoverEffect p-2 text-white rounded-full bg-black ring-2 ring-black shadow-sm shadow-black hover:bg-purple-100" />
                       <input
                         type="file"
                         hidden

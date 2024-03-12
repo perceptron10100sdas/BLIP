@@ -14,7 +14,7 @@ export default function User({user,id}) {
     <div className="flex justify-center mt-8">
       <a
       onClick={() => router.push(`/profile/${user?.data()?.uid}`)}
-      className="w-full p-4  ring-1 ring-white relative overflow-hidden group bg-white bg-opacity-40  rounded-2xl"
+      className="w-full  ring-1 ring-white relative overflow-hidden group bg-white bg-opacity-40  rounded-2xl"
     >
       <div className="absolute inset-0 bg-indigo-900 translate-x-[-100%] group-hover:translate-x-[0%] transition-transform duration-300" />
       <img src={user?.data()?.userImg} width="150" height="150" className="absolute z-10 -top-8 -right-12   group-hover:rotate-12 group-hover:mx-7 transition-transform duration-300 rounded-2xl" />

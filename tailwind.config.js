@@ -10,7 +10,12 @@ module.exports = {
         'demo': "url('/blip.jpg')",
 
     },},
+  
+    fontFamily:{
+      urbanist:['Urbanist']
+    },
+  
+
   },
   plugins: [],
 }
-

@@ -58,7 +58,7 @@ export default function Feed() {
   
  
   return (
-    <div className="xl:ml-[500px]  xl:min-w-[550px] sm:ml-[72px] p-3 bg-inherit flex-grow max-w-xl">
+    <div className="xl:ml-[500px]  xl:min-w-[550px] sm:ml-[72px] p-1 bg-inherit flex-grow max-w-xl">
 
 
 

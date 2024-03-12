@@ -7,7 +7,7 @@ import {motion} from "framer-motion"
 const HoverDevCards = () => {
   return (
     <div className="p-4">
-      <p className="text-2xl font-semibold mb-2 text-rose-800">Routes</p>
+      <p className="text-2xl font-thin mb-2 text-white">Routes</p>
       <div className="">
         <Card
           title="Home"
@@ -38,15 +38,15 @@ const Card = ({ title, subtitle, Icon, href }) => {
       initial={{ x:-100}} animate={{ x: 0}}
       transition={{duration:3, ease:"anticipate" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-black to-slate-600 translate-x-[100%] group-hover:translate-x-[0%] transition-transform duration-300" />
+      <div className="absolute inset-0 bg-lime-400 translate-y-[-90%] group-hover:translate-y-[0%] transition-transform duration-300" />
 
-      <Icon className="absolute z-10 -top-12 -right-12 text-9xl text-pink-200 group-hover:text-sky-400 group-hover:rotate-12 transition-transform duration-300" />
-      <Icon className="mb-2 text-2xl text-rose-300 group-hover:text-white transition-colors relative z-10 duration-300" />
+      <Icon className="absolute z-10 -top-12 -right-12 text-9xl text-white group-hover:text-black group-hover:rotate-12 transition-transform duration-300" />
+      <Icon className="mb-2 text-2xl text-lime-200 group-hover:text-white transition-colors relative z-10 duration-300" />
       <div>
-      <h3 className=" text-xl text-rose-500  group-hover:text-pink-500 relative z-10 duration-300">
+      <h3 className=" text-xl text-white group-hover:text-black relative z-10 duration-300">
         {title}
       </h3>
-      <p className="text-transparent group-hover:text-violet-200 relative z-10 duration-300">
+      <p className="text-transparent group-hover:text-white relative z-10 duration-300">
         {subtitle}
       </p></div>
     </motion.a>

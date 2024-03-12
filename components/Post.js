@@ -69,10 +69,10 @@ const unsubscribe=onSnapshot(
   return (
     
     <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
-    transition={{duration:3, ease:"anticipate" }} className="flex w-full  relative overflow-hidden group bg-black p-6 mt-5 mb-4 ring-2 ring-black rounded-2xl  shadow-lg shadow-black justify-start bg-opacity-50 backdrop-blur-2xl"> <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-800 to-pink-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 bg-opacity-60" />
+    transition={{duration:3, ease:"anticipate" }} className="flex w-full  relative overflow-hidden group bg-white p-6 mt-5 mb-4 ring-2 ring-black rounded-2xl  shadow-lg shadow-black justify-start  backdrop-blur-2xl"> <div className="absolute inset-0 bg-lime-400 translate-y-[90%] group-hover:translate-y-[18%] transition-transform duration-300 rounded-2xl " />
       {/* user image */}
       <img
-        className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-orange-500 ring-2 shadow-md shadow-slate-500 "
+        className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-lime-400 ring-2 shadow-md shadow-slate-500 "
         src={post?.data()?.userImg}
         alt="user-img"
       />
@@ -82,8 +82,8 @@ const unsubscribe=onSnapshot(
 
         <div className="flex items-center justify-between ">
           {/* post user info */}
-          <div className="flex items-center space-x-1 whitespace-nowrap shadow-md">
-            <h4 className=" font-extralight text-[15px] sm:text-[16px] hover:underline relative z-10 text-white group-hover:text-xl group-hover:overline  group-hover:text-purple-400" onClick={() => router.push(`/profile/${uid}`)}>
+          <div className="flex items-center space-x-1 whitespace-nowrap ">
+            <h4 className="  font-sans text-xl bg-transparent  hover:underline relative z-10 text-black group-hover:text-xl group-hover:overline  group-hover:text-black" onClick={() => router.push(`/profile/${uid}`)}>
               {post?.data()?.name}
             </h4>
            
@@ -97,7 +97,7 @@ const unsubscribe=onSnapshot(
 
         <p
           onClick={() => router.push(`/posts/${id}`)}
-          className="text-white text-[15px sm:text-[16px] mb-2  text-white relative z-10 group-hover:text-3xl
+          className="font-thin  text-xl  mb-2  text-black relative z-10 group-hover:text-3xl group-hover:text-black
           "
         >
           {post?.data()?.text}

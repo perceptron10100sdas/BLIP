@@ -28,7 +28,7 @@ export default function Navig() {
       
 
       
-   <div className={`${openNavigation ? "flex" : "hidden xl:flex"}  fixed  left-3 bg-transparent h-screen p-3  ring-2 ring-blue-950 shadow-2xl shadow-black z-10`}>
+   <div className={`${openNavigation ? "flex" : "hidden xl:flex"}  fixed  left-3 bg-transparent h-screen p-3   shadow-2xl shadow-black z-10`}>
 
 
 <HoverDevCards/>
