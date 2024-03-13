@@ -38,7 +38,7 @@ const Card = ({ title, subtitle, Icon, href }) => {
       initial={{ x:-100}} animate={{ x: 0}}
       transition={{duration:3, ease:"anticipate" }}
     >
-      <div className="absolute inset-0 bg-lime-400 translate-y-[-90%] group-hover:translate-y-[0%] transition-transform duration-300" />
+      <div className="absolute inset-0 bg-lime-400 translate-y-[-90%] group-hover:translate-y-[0%] transition-transform duration-300 brightness-125 rotate-3" />
 
       <Icon className="absolute z-10 -top-12 -right-12 text-9xl text-white group-hover:text-black group-hover:rotate-12 transition-transform duration-300" />
       <Icon className="mb-2 text-2xl text-lime-200 group-hover:text-white transition-colors relative z-10 duration-300" />
