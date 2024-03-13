@@ -25,6 +25,8 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
     const [postId, setPostId] = useRecoilState(postIdState);
     const [currentUser] = useRecoilState(userState);
     const router = useRouter();
+    const uid=comment?.uid
+  console.log(uid)
   
     useEffect(() => {
       const unsubscribe = onSnapshot(
@@ -79,23 +81,23 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
     }
   
     return (
-      <div className="flex  rounded-md ring-2 ring-purple-400 mt-3 p-3 bg-[url('/sidebar.jpg')] bg-cover bg-center bg-opacity-20">
+      <div className="flex    mt-3 p-3 bg-slate-900 bg-cover bg-center  rounded-3xl">
         {/* user image */}
 
         <img
-          className="h-11 w-11 rounded-2xl mr-4 ring-2 ring-purple-500 p-1"
+          className="h-11 w-11 rounded-2xl mr-4 ring-2 ring-lime-300 p-1"
           src={comment?.userImg}
           alt="user-img"
         />
         {/* right side */}
         <div className="flex-1">
           {/* Header */}
-  <div className="bg-white rounded-md bg-opacity-50 ring-2 ring-pink-400 p-3">
+  <div className=" rounded-md bg-opacity-50  p-3">
           <div className="flex items-center justify-between  ">
             {/* post user info */}
             <div className="flex items-center space-x-1 whitespace-nowrap ">
               
-              <span className="text-sm sm:text-[15px]  text-white">
+              <span className="text-sm sm:text-[15px]  text-slate-200 "  onClick={() => router.push(`/profile/${uid}`)}>
                 @{comment?.username} commented-
               </span>
              
@@ -107,7 +109,7 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
   
           {/* post text */}
   
-          <p className="text-gray-800 text-[15px sm:text-[16px] mb-2  text-black">
+          <p className="text-white brightness-110 mt-3 text-xl font-sans  sm:text-[16px] mb-2">
            "{comment?.comment}" 
           </p>
   

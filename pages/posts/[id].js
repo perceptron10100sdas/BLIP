@@ -43,7 +43,7 @@ console.log(id)
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-screen mx-auto bg-gradient-to-r from-black via-indigo-700  to-rose-400 ">
+      <main className="flex min-h-screen mx-auto bg-black ">
         {/* Sidebar */}
         <Navig/>
         <Sidebar />
