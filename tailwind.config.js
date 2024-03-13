@@ -6,16 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {  backgroundImage: {
-      
+
         'demo': "url('/blip.jpg')",
 
     },},
-  
-    fontFamily:{
-      urbanist:['Urbanist']
-    },
-  
-
   },
   plugins: [],
 }
