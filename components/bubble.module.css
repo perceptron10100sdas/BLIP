@@ -6,13 +6,13 @@
   
   .hoverText:hover {
     font-weight: 900;
-    color: rgb(238, 242, 255);
+    color: rgb(146, 251, 125);
   }
   
   /* To the right */
   .hoverText:hover + .hoverText {
     font-weight: 500;
-    color: rgb(199, 210, 254);
+    color: rgb(138, 247, 142);
   }
   
   .hoverText:hover + .hoverText + .hoverText {
@@ -22,7 +22,7 @@
   /* To the left */
   .hoverText:has(+ .hoverText:hover) {
     font-weight: 500;
-    color: rgb(199, 210, 254);
+    color: rgb(147, 252, 142);
   }
   
   .hoverText:has(+ .hoverText + .hoverText:hover) {

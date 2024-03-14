@@ -51,14 +51,14 @@ console.log(id)
         {/* Feed */}
 
         <div className="xl:ml-[370px]  xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl p-2">
-          <div className="flex items-center space-x-2  py-2 px-3 sticky top-0 z-50 bg-black ring-2 ring-blue-950 rounded-xl">
-            <div className="hoverEffect" onClick={() => router.push("/")}>
-              <ArrowLongLeftIcon className="h-5  text-sky-600 " />
+          <div className="flex items-center space-x-2  py-2 px-3 sticky top-0 z-50 bg-slate-900  rounded-xl">
+            <div className=" hover:bg-white rounded-2xl p-2" onClick={() => router.push("/")}>
+              <ArrowLongLeftIcon className="h-5  text-lime-600 " />
             </div>
             <h2 className="text-lg sm:text-xl text-white font-bold cursor-pointer">
               <Example/>
             </h2>
-            <p className="font-thin italic text-pink-300 text-xl">@postpages</p>
+            <p className="font-thin italic text-lime-300 text-xl">@postpages</p>
           </div>
 
           <Post id={id} post={post}  />
