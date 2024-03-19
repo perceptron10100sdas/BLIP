@@ -83,7 +83,7 @@ const unsubscribe=onSnapshot(
         <div className="flex items-center justify-between ">
           {/* post user info */}
           <div className="flex items-center space-x-1 whitespace-nowrap ">
-            <h4 className="  font-sans text-xl bg-transparent  hover:underline relative z-10 text-black group-hover:text-xl group-hover:overline  group-hover:text-black" onClick={() => router.push(`/profile/${uid}`)}>
+            <h4 className="  font-sans text-xl bg-transparent  hover:underline relative z-10 text-white group-hover:text-xl group-hover:overline  group-hover:text-white" onClick={() => router.push(`/profile/${uid}`)}>
               {post?.data()?.name}
             </h4>
            
@@ -97,7 +97,7 @@ const unsubscribe=onSnapshot(
 
         <p
           onClick={() => router.push(`/posts/${id}`)}
-          className="font-thin  text-xl  mb-2  text-black relative z-10 group-hover:text-3xl group-hover:text-black
+          className="font-thin  text-xl  mb-2  text-white relative z-10 group-hover:text-3xl group-hover:text-black
           "
         >
           {post?.data()?.text}
