@@ -69,7 +69,7 @@ const unsubscribe=onSnapshot(
   return (
     
     <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
-    transition={{duration:3, ease:"anticipate" }} className="flex w-full  relative overflow-hidden group bg-white p-6 mt-5 mb-4 ring-2 ring-black rounded-2xl  shadow-lg shadow-black justify-start  backdrop-blur-2xl"> <div className="absolute inset-0 bg-lime-400 translate-y-[90%] group-hover:translate-y-[18%] transition-transform duration-300 rounded-2xl brightness-125  rotate-6" />
+    transition={{duration:3, ease:"anticipate" }} className="flex w-full  relative overflow-hidden group bg-slate-900 p-6 mt-5 mb-4 ring-2 ring-black rounded-2xl  shadow-lg shadow-black justify-start  backdrop-blur-2xl"> <div className="absolute inset-0 bg-lime-400 translate-y-[90%] group-hover:translate-y-[18%] transition-transform duration-300 rounded-2xl brightness-125  rotate-6" />
       {/* user image */}
       <img
         className="h-11 w-11 rounded-xl p-1 mr-4 group-hover:scale-110 ring-lime-400 ring-2 shadow-md shadow-slate-500 "
