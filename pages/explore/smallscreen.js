@@ -21,7 +21,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useRecoilState } from "recoil";
 import { userState } from "../../atom/userAtom";
 import { useRouter } from "next/router";
-import Example from '../../components/bubbletext'
+
 import {motion} from "framer-motion"
 
 
@@ -59,7 +59,7 @@ export default function smallscreen() {
 
     <div className=" ">
 
-  <div className='text-5xl font-light text-purple-500 text-center overline mt-4 '><Example/></div>
+  <div className='text-5xl font-light text-purple-500 text-center overline mt-4 '>BLIP</div>
   
 
 

@@ -6,7 +6,7 @@ import { collection,doc, onSnapshot, orderBy,
   setDoc} from "firebase/firestore";
 import { db } from '../../firebase';
 import profiles from '../../components/profiles';
-import Example from '../../components/bubbletext';
+
 import { useRecoilState } from 'recoil';
 import { userState } from '../../atom/userAtom';
 
