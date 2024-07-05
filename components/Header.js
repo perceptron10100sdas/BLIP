@@ -46,7 +46,7 @@ export default function Header() {
   (
         <button
   onClick={() => router.push("/explore/smallscreen")}
-  className="bg-black text-indigo-500  font-thin shadow-md hover:brightness-95  rounded-full md:hidden"
+  className="bg-black text-white  font-semibold   shadow-md hover:brightness-95  rounded-full md:hidden"
   >
   Let's Blip
   </button> ): (
