@@ -58,7 +58,7 @@ console.log(id)
             <h2 className="text-lg sm:text-xl text-white font-bold cursor-pointer">
              BLIP
             </h2>
-            <p className="font-thin italic text-lime-300 text-xl">@postpages</p>
+            <p className="font-thin italic text-lime-300 text-xl"> @postpages</p>
           </div>
 
           <Post id={id} post={post}  />
