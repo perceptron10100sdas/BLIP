@@ -7,7 +7,7 @@ import { useState,useEffect } from 'react';
 
 import 'tailwindcss/tailwind.css';
 
-import CommentModal from '../components/CommentModal';
+
 import { getAuth } from "firebase/auth";
 import { listAll } from "firebase/storage";
 import { db } from '../firebase';
@@ -38,7 +38,7 @@ export default function Home() {
         <Feed/>
       
          
-<CommentModal />
+
 
 
       </main></div>

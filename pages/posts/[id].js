@@ -1,6 +1,6 @@
 import { ArrowLeftIcon } from "@heroicons/react/outline";
 import Head from "next/head";
-import CommentModal from "../../components/CommentModal";
+
 import Sidebar from "../../components/Sidebar";
 
 import Post from "../../components/Post";
@@ -11,7 +11,7 @@ import { collection,doc, onSnapshot, orderBy,
 import { db } from "../../firebase";
 import { ArrowLongLeftIcon } from "@heroicons/react/24/solid";
 import Comment from "../../components/Comment";
-import Example from "../../components/bubbletext";
+
 import Navig from "../../components/navig";
 
 export default function PostPage({ newsResults, randomUsersResults }) {
@@ -56,7 +56,7 @@ console.log(id)
               <ArrowLongLeftIcon className="h-5  text-lime-600 " />
             </div>
             <h2 className="text-lg sm:text-xl text-white font-bold cursor-pointer">
-              <Example/>
+             BLIP
             </h2>
             <p className="font-thin italic text-lime-300 text-xl">@postpages</p>
           </div>

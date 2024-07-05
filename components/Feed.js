@@ -16,7 +16,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { motion } from 'framer-motion'
 
 import User from '../pages/people/user'
-import Example from './bubbletext';
+
 import { DragCloseDrawerExample } from './DragDrawCloser';
 import Header from './Header';
 

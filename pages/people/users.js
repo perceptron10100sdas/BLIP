@@ -7,7 +7,7 @@ import { useRecoilState } from 'recoil'
 import { userState } from '../../atom/userAtom'
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import Example from '../../components/bubbletext'
+
 import Header from '../../components/Header'
 
 

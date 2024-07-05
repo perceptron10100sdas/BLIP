@@ -23,7 +23,7 @@ import { doc, getDoc,onSnapshot,collection } from "firebase/firestore";
 import { useRecoilState } from "recoil";
 import { userState } from "../atom/userAtom";
 import { useRouter } from "next/router";
-import Example from './bubbletext'
+
 import {motion } from "framer-motion"
 import { useState } from 'react'
 import Users from '../pages/people/users'
