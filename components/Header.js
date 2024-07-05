@@ -1,22 +1,132 @@
 import React from 'react'
-import Example from './bubbletext'
+
 import Navig from './navig'
 import Router, { useRouter } from 'next/router'
 import {motion} from "framer-motion"
+import { BsFillSkipForwardFill } from "react-icons/bs";
+import { useRecoilState } from "recoil";
+import { userState } from "../atom/userAtom";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { useState,useEffect } from 'react';
+
+import { query,orderBy } from 'firebase/firestore'
+import { db } from "../firebase";
+import { doc, getDoc,onSnapshot,collection } from "firebase/firestore";
 
 export default function Header() {
+  const [currentUser, setCurrentUser] = useRecoilState(userState);const auth = getAuth();
+  
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const fetchUser = async () => {
+          const docRef = doc(db, "users", auth.currentUser.providerData[0].uid);
+          const docSnap = await getDoc(docRef);
+          if (docSnap.exists()) {
+            setCurrentUser(docSnap.data());
+          }
+        };
+        fetchUser();
+      }
+    });
+  }, []);
+
+  function onSignOut() {
+    signOut(auth);
+    setCurrentUser(null);
+  }
   const router=useRouter()
   return (
-    <div className=' sticky top-0 z-10 bg-black min-w-screen-sm '>
-      <div className='flex justify-between   md:justify-center'>
-     <Navig/>
-      <h1 className=' text-4xl  text-center   p-3 mx-2 bg-opacity-40 relative overflow-hidden   '><motion.div initial={{ opacity:0}} animate={{ opacity: 1}}
-    transition={{repeat: Infinity,duration:4, ease:"linear" }} className="absolute inset-0 bg-lime-400 translate-y-[10%]  transition-transform duration-300 rotate-45 rounded-2xl brightness-125    -z-30" /> <Example/></h1><button
-onClick={() => router.push("/explore/smallscreen")}
-className="bg-black text-indigo-500  font-thin shadow-md hover:brightness-95  rounded-full md:hidden"
->
-Let's Blip
-</button></div>
-    </div>
+    
+      <div className='xl:ml-[500px]  xl:min-w-[550px] sm:ml-[72px] p-1 bg-inherit flex-grow max-w-xl '>
+       
+    
+      
+        {!currentUser ?
+  (
+        <button
+  onClick={() => router.push("/explore/smallscreen")}
+  className="bg-black text-indigo-500  font-thin shadow-md hover:brightness-95  rounded-full md:hidden"
+  >
+  Let's Blip
+  </button> ): (
+<div className=' flex  justify-center'>
+  <h1 className=' text-slate-300 text-start text-xl'>
+   {currentUser?.name}
+  </h1>
+  
+<img src={currentUser?.userImg}
+width="30px"
+alt="" className="rounded-2xl mr-2 relative z-10  mx-3 mb-4  shadow-xl opacity-90 shadow-black "/>
+</div>
+  )}
+ 
+  
+  
+  </div>
+     
   )
 }
+const DURATION = 0.25;
+const STAGGER = 0.025;
+
+const FlipLink = ({ children, href }) => {
+  return (
+    <motion.a
+      initial="initial"
+      whileHover="hovered"
+      href={href}
+      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+      style={{
+        lineHeight: 0.75,
+      }}
+    >
+      <div>
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: 0,
+              },
+              hovered: {
+                y: "-100%",
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+      <div className="absolute inset-0">
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: "100%",
+              },
+              hovered: {
+                y: 0,
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+    </motion.a>
+  );
+};

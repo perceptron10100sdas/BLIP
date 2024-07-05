@@ -6,9 +6,9 @@ import {motion} from "framer-motion"
 
 const HoverDevCards = () => {
   return (
-    <div className="p-4">
+    <div className="p-4  ">
       <p className="text-2xl font-thin mb-2 text-white">Routes</p>
-      <div className="">
+      <div className="flex space-x-2">
         <Card
           title="Home"
           subtitle="127.0.0.1:5500"
@@ -40,15 +40,9 @@ const Card = ({ title, subtitle, Icon, href }) => {
     >
       <div className="absolute inset-0 bg-lime-400 translate-y-[-90%] group-hover:translate-y-[0%] transition-transform duration-300 brightness-125 rotate-3" />
 
-      <Icon className="absolute z-10 -top-12 -right-12 text-9xl text-white group-hover:text-black group-hover:rotate-12 transition-transform duration-300" />
+      <Icon className="absolute z-10 -top-12 -right-12 text-9xl text-transparent group-hover:text-black group-hover:rotate-12 transition-transform duration-300" />
       <Icon className="mb-2 text-2xl text-lime-200 group-hover:text-white transition-colors relative z-10 duration-300" />
-      <div>
-      <h3 className=" text-xl text-white group-hover:text-black relative z-10 duration-300">
-        {title}
-      </h3>
-      <p className="text-transparent group-hover:text-white relative z-10 duration-300">
-        {subtitle}
-      </p></div>
+      
     </motion.a>
   );
 };

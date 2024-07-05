@@ -18,6 +18,7 @@ import { useAnimationFrame } from 'framer-motion';
 import Navig from '../components/navig';
 import Header from '../components/Header';
 import User from './people/user';
+import Users from './people/users';
 
 export default function Home() {
   
@@ -31,13 +32,11 @@ export default function Home() {
         <meta name="description" content="High dopamine content" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='bg-black  min-w-screen '><Header/>
+      <div className='bg-black'>
       <main className=" flex justify-between   min-h-screen max-w-screen bg-black  bg-fixed bg-center  ">
-       
-      
       
         <Feed/>
-        <Sidebar/>
+      
          
 <CommentModal />
 

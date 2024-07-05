@@ -13,23 +13,34 @@ import {
   InboxIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
+import { query,orderBy } from 'firebase/firestore'
+import User from '../pages/people/user'
 
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect } from "react";
 import { db } from "../firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc,onSnapshot,collection } from "firebase/firestore";
 import { useRecoilState } from "recoil";
 import { userState } from "../atom/userAtom";
 import { useRouter } from "next/router";
 import Example from './bubbletext'
 import {motion } from "framer-motion"
+import { useState } from 'react'
+import Users from '../pages/people/users'
+
 
 
 export default function Sidebar() {
   const router = useRouter();
   const [currentUser, setCurrentUser] = useRecoilState(userState);
-  console.log(currentUser);
+
+  const[users,setUsers]=useState([])
+ 
+ 
   const auth = getAuth();
+  
+  
+  
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -49,10 +60,19 @@ export default function Sidebar() {
     signOut(auth);
     setCurrentUser(null);
   }
-  
-
+  useEffect(
+    () =>
+      onSnapshot(
+        query(collection(db, "users"), orderBy("timestamp", "desc")),
+        (snapshot) => {
+          setUsers(snapshot.docs);
+        }
+      ),
+    []
+  );
+ 
   return (
-<div className="hidden xl:flex flex-col  mt-2 mb-3 items-center  fixed right-7  h-full xl:ml-24  rounded-xl ring-2 ring-slate-950 shadow-2xl shadow-slate-950 bg-slate-900   bg-cover bg-center p-5 z-20">  <div className="absolute inset-0 bg-lime-400 translate-y-[56%] ] transition-transform duration-300 rounded-3xl -z-20 brightness-125 " />  
+<div className="hidden xl:flex flex-col  mt-2 mb-3 items-center   right-7  h-screen xl:ml-24  rounded-xl ring-2 ring-slate-950 shadow-2xl shadow-slate-950 bg-slate-900   bg-cover bg-center p-5 z-20">  
 
     <div className=" ">
 
@@ -66,7 +86,7 @@ export default function Sidebar() {
 
       {/* Mini-Profile */}
 
-      <div className=" mt-16 text-gray-700 space-y-7 items-center  ">
+      <div className=" mt-16 text-gray-700 space-y-7 items-center   ">
         <img
             onClick={onSignOut}
             src={currentUser?.userImg}
@@ -79,12 +99,7 @@ export default function Sidebar() {
           
          
         </div>
-        <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
-    transition={{duration:3, ease:"anticipate" }} className='text-white   rounded-xl    p-3 flex justify-between '>
-        <h1 className=' text-black text-xl font-sans' >Followers</h1><p className=' text-black  text-xl '>10100</p></motion.div>
-        <motion.div initial={{scale:0.45}} animate={{scale:1}}
-    transition={{duration:4, ease:"linear" }} className='text-white bg-black ring-1 ring-slate-700 rounded-xl    p-3 flex justify-between shadow-lg shadow-black'>
-        <h1 className='ftext-black text-xl font-thin' >Following</h1><p className=' text-white'>17</p></motion.div>
+      
         <div className='bg-white  flex p-3 rounded-xl justify-center mt-1  '>
           <h1 className='text-sky-500'>BLIP</h1>
           <h1 className='font-thin text-pink-500 italic'>@verified</h1></div>

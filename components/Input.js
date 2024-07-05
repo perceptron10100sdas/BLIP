@@ -13,7 +13,7 @@ import {
 import { addDoc, collection, serverTimestamp,updateDoc,doc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import motion from "framer-motion"
-import Example from './bubbletext';
+
 
 export default function Input() {
   
@@ -70,17 +70,17 @@ export default function Input() {
   return (
 <>
     {currentUser && (
-      <div className="flex    rounded-2xl p-4 mt-2 space-x-3   bg-lime-400  z-30 shadow-xl shadow-lime-200  brightness-125 ">
+      <div className="flex    rounded-2xl p-4 mt-2 space-x-3   bg-slate-700  bg-opacity-50  ">
         <img
          onClick={onSignOut}
          src={currentUser?.userImg}
           alt="user-img"
           className="h-11 w-11 rounded-xl p-1 ring-1 ring-black cursor-pointer hover:brightness-95"
         />
-        <div className="w-full divide-y divide-gray-200">
+        <div className="w-full ">
           <div className="">
           <textarea
-                className="w-full border-none focus:ring-0 text-lg placeholder-black placeholder-font-thin tracking-wide min-h-[50px] text-white bg-inherit"
+                className="w-full border-none focus:ring-0 text-lg  placeholder:text-white placeholder-font-thin tracking-wide min-h-[50px] text-white bg-inherit"
                 rows="2"
                 placeholder="What's happening?"
                 value={input}
@@ -99,7 +99,9 @@ export default function Input() {
                 />
               </div>
             )}
-            <div className="flex items-center justify-between pt-2.5">
+         <hr/>
+            <div className="flex items-center justify-between pt-2.5 ">
+          
               {!loading && (
                 <>
                   <div className="flex">
@@ -107,7 +109,7 @@ export default function Input() {
                       className=""
                       onClick={() => filePickerRef.current.click()}
                     >
-                      <PhotoIcon className="h-10 w-10 hoverEffect p-2 text-white rounded-full bg-black ring-2 ring-black shadow-sm shadow-black hover:bg-purple-100" />
+                      <PhotoIcon className="h-10 w-10 hoverEffect p-2 text-white rounded-2xl bg-red-500 ring-1  ring-red-500 shadow-sm shadow-black hover:bg-purple-100" />
                       <input
                         type="file"
                         hidden
@@ -120,9 +122,9 @@ export default function Input() {
                   <button
                     onClick={sendPost}
                     disabled={!input.trim()}
-                    className="bg-black text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
+                    className="bg-red-500 text-white px-4 py-1.5 rounded-xl font-bold shadow-md hover:brightness-95 disabled:opacity-50"
                   >
-                    <Example/>
+                    Blip
                   </button>
                 </>
               )}

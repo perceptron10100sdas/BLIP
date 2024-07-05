@@ -11,10 +11,10 @@ import Example from '../../components/bubbletext'
 import Header from '../../components/Header'
 
 
-export default function users() {
+export default function Users() {
   const[users,setUsers]=useState([])
   const [currentUser, setCurrentUser] = useRecoilState(userState);
-  console.log(currentUser);
+  console.log(currentUser)
   const auth = getAuth();
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -46,7 +46,7 @@ export default function users() {
     []
   );
   return (
-    <div className='bg-black h-full p-4'>
+    <div className='bg-black h-full w-[400px] p-4'>
      <Header/>
     {users.map((user) => (
         <User key={user.id} id={user.id} user={user} />

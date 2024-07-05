@@ -5,11 +5,12 @@ module.exports = {
   "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+   
     extend: {  backgroundImage: {
 
         'demo': "url('/blip.jpg')",
 
     },},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms'), require('tailwind-scrollbar')],
 }
