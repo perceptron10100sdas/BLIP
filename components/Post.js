@@ -95,7 +95,11 @@ const unsubscribe=onSnapshot(
 
 
     <motion.div initial={{ y:100,scale:0.55}} animate={{ y: 0,scale:1}}
+<<<<<<< HEAD
     transition={{duration:3, ease:"anticipate" }} className="flex justify-center  w-full  relative overflow-hidden group bg-stone-900 bg-opacity-50  p-7 mt-6 mb-4  rounded-2xl shadow-2xl ring-1 ring-black shadow-black   backdrop-blur-2xl  blur-xs"> 
+=======
+    transition={{duration:3, ease:"anticipate" }} className="flex w-full  relative overflow-hidden group bg-slate-900 p-6 mt-5 mb-4 ring-2 ring-black rounded-2xl  shadow-lg shadow-black justify-start  backdrop-blur-2xl"> <div className="absolute inset-0 bg-lime-400 translate-y-[90%] group-hover:translate-y-[18%] transition-transform duration-300 rounded-2xl brightness-125  rotate-6" />
+>>>>>>> f58a935283d585f5710dc516d6f33d8542d54b44
       {/* user image */}
       
      
@@ -110,8 +114,13 @@ const unsubscribe=onSnapshot(
 
         <div className="flex items-center  justify-between ">
           {/* post user info */}
+<<<<<<< HEAD
           <div className="flex justify-between  space-x-1 whitespace-nowrap ">
             <h4 className="  font-semibold  bg-transparent   relative z-10 text-white  " onClick={() => router.push(`/profile/${uid}`)}>
+=======
+          <div className="flex items-center space-x-1 whitespace-nowrap ">
+            <h4 className="  font-sans text-xl bg-transparent  hover:underline relative z-10 text-white group-hover:text-xl group-hover:overline  group-hover:text-white" onClick={() => router.push(`/profile/${uid}`)}>
+>>>>>>> f58a935283d585f5710dc516d6f33d8542d54b44
               {post?.data()?.name}
             </h4>
             <h4 className="  font-thin  bg-transparent   relative z-10 text-slate-300    " onClick={() => router.push(`/profile/${uid}`)}>
@@ -132,9 +141,19 @@ const unsubscribe=onSnapshot(
         </div>
         {/* post text */}
 
+<<<<<<< HEAD
        
 
        
+=======
+        <p
+          onClick={() => router.push(`/posts/${id}`)}
+          className="font-thin  text-xl  mb-2  text-white relative z-10 group-hover:text-3xl group-hover:text-black
+          "
+        >
+          {post?.data()?.text}
+        </p>
+>>>>>>> f58a935283d585f5710dc516d6f33d8542d54b44
 
         {/* post image */}
 
