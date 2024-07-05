@@ -81,14 +81,10 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
     }
   
     return (
-      <div className="flex    mt-3 p-3 bg-slate-900 bg-cover bg-center  rounded-3xl">
+      <div className="  bg-inherit bg-cover bg-center  rounded-3xl">
         {/* user image */}
 
-        <img
-          className="h-11 w-11 rounded-2xl mr-4 ring-2 ring-lime-300 p-1"
-          src={comment?.userImg}
-          alt="user-img"
-        />
+       
         {/* right side */}
         <div className="flex-1">
           {/* Header */}
@@ -97,26 +93,12 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
             {/* post user info */}
             <div className="flex items-center space-x-1 whitespace-nowrap ">
               
-              <span className="text-sm sm:text-[15px]  text-slate-200 "  onClick={() => router.push(`/profile/${uid}`)}>
-                @{comment?.username} commented-
-              </span>
-             
-            </div>
-  
-            {/* dot icon */}
-            
-          </div>
-  
-          {/* post text */}
-  
-          <p className="text-white brightness-110 mt-3 text-xl font-sans  sm:text-[16px] mb-2">
+           <span className=" text-xs text-white">{comment?.name}</span>
+           <p className="text-slate-400  text-xs ">
            "{comment?.comment}" 
           </p>
-  
-          {/* icons */}
-  
           <div className="flex justify-between text-gray-500 p-2">
-            <div className="flex items-center select-none">
+            <div className="flex items-center select-none text-xs">
               <ChatBubbleBottomCenterIcon
                 onClick={() => {
                   if (!currentUser) {
@@ -127,19 +109,19 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
                     setOpen(!open);
                   }
                 }}
-                className="h-9 w-9 hoverEffect p-2 text-sky-300 hover:text-sky-500 hover:bg-sky-100"
+                className="h-8 w-8 hoverEffect p-2 text-gray-300 hover:text-sky-500 hover:bg-sky-100"
               />
             </div>
             <div className="flex items-center">
               {hasLiked ? (
                 <HeartIconFilled
                   onClick={likeComment}
-                  className="h-9 w-9 hoverEffect p-2 text-red-600 hover:bg-red-100"
+                  className="h-8 w-8 hoverEffect p-2 text-red-600 hover:bg-red-100"
                 />
               ) : (
                 <HeartIcon
                   onClick={likeComment}
-                  className="h-9 w-9 hoverEffect p-2 text-red-400 hover:text-red-600 hover:bg-red-100"
+                  className="h-8 w-8 hoverEffect p-2 text-red-400 hover:text-red-600 hover:bg-red-100"
                 />
               )}
               {likes.length > 0 && (
@@ -154,7 +136,7 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
             {currentUser?.uid === comment?.userId && (
               <TrashIcon
                 onClick={deleteComment}
-                className="h-9 w-9 hoverEffect p-2 text-slate-400 hover:text-red-600 hover:bg-red-100"
+                className="h-8 w-8 hoverEffect p-2 text-slate-400 hover:text-red-600 hover:bg-red-100"
               />
             )}
            
@@ -162,6 +144,26 @@ import {EllipsisHorizontalCircleIcon,ChatBubbleBottomCenterIcon,TrashIcon,HeartI
          
           </div></div>
         </div>
-      </div>
+            </div>
+
+  
+            {/* dot icon */}
+            
+          </div>
+  
+          {/* post text */}
+  
+         
+  
+          {/* icons */}
+  
+          <div className="flex justify-between text-gray-500 p-2">
+        
+           
+  
+         
+          </div>
+        </div>
+    
     );
   }

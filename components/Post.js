@@ -15,7 +15,7 @@ import {motion} from "framer-motion"
 import { MdOutlineVerified } from "react-icons/md";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { IoIosSend } from "react-icons/io";
-
+import Comment from "./Comment";
 
 
 
@@ -189,9 +189,17 @@ const unsubscribe=onSnapshot(
 
           </div>
 
-
+          
 
         </div>
+        {comments.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  commentId={comment.id}
+                  originalPostId={id}
+                  comment={comment.data()}
+                />
+              ))}
         {likes.length > 0 && (
               <span
                 className={`${hasLiked && "text-red-600"}  text-slate-400   text-sm select-none relative z-10`}
