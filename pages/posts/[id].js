@@ -77,7 +77,7 @@ console.log(id)
         </div>
 
         
-        <CommentModal />
+       
       </main>
     </div>
   );
