@@ -23,8 +23,8 @@ export default function Post({ post, id }) {
   
   const [likes, setLikes] = useState([]);
   const[hasLiked,setHasLiked]=useState(false);
-  const [open, setOpen] = useRecoilState(modalState)
-  const [comments, setComments] = useState([]);
+  
+   const [comments, setComments] = useState([]);
   const [postId, setPostId] = useRecoilState(postIdState);
   const router = useRouter();
   const [currentUser] = useRecoilState(userState);
@@ -35,7 +35,7 @@ export default function Post({ post, id }) {
   
 
   async function sendComment() {
-    await addDoc(collection(db, "posts", postId, "comments"), {
+    await addDoc(collection(db, "posts", id , "comments"), {
       comment: input,
       name: currentUser.name,
       username: currentUser.username,
@@ -44,7 +44,7 @@ export default function Post({ post, id }) {
       userId: currentUser.uid,
     });
 
-    setOpen(false);
+    
     setInput("");
     router.push(`posts/${postId}`);
   }

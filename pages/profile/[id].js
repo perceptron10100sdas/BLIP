@@ -34,7 +34,7 @@ export default function profile() {
   const[hasFollowed,setHasFollowed]=useState(false);
   useEffect(()=>{
     const unsubscribe=onSnapshot(
-      collection(db, "users",id, "followers"),
+      collection(db, "users", id , "followers"),
       (snapshot)=>setFollowers(snapshot.docs)
     )
       }, [db])
@@ -87,7 +87,7 @@ export default function profile() {
         }}
         className="mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-4"
       >
-    <Block className="col-span-12 row-span-2 md:col-span-6  bg-[image:var(--image-url)] bg-cover bg-center h-[500px]" style={{'--image-url': `url(${profile?.data()?.userImg})`}}>
+    <Block className="col-span-12 row-span-2 md:col-span-6  bg-[image:var(--image-url)] bg-cover bg-center object-fill  h-[500px]" style={{'--image-url': `url(${profile?.data()?.userImg})`}}>
     
     <h1 className="mb-12 text-4xl font-medium leading-tight text-transparent">
       Hi, I'm Tom.{" "}
